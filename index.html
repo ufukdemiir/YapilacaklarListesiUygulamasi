@@ -1,0 +1,1233 @@
+<h1 style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">Yapılacaklar Listesi Uygulaması: Profesyonel Görev Takibi</h1>
+
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
+
+<style>
+  /* ============================================================
+     BLOGGER TEMA İZOLASYONU
+     Bu kodun altına uygulama kodunu yapıştırın, başka işlem yok.
+     ============================================================ */
+
+  /* 1. BLOGGER ARAYÜZ ÖĞELERİNİ GİZLE */
+  header, footer, nav, aside,
+  #sidebar, #sidebar-wrapper, #header, #header-wrapper, #footer,
+  #navbar, #navbar-iframe, .navbar-iframe-container,
+  .header, .footer, .navbar, .nav, .sidebar,
+  .post-title, .entry-title, .page-title,
+  h1.title, h2.title, h3.post-title, h1.text-3xl,
+  .post-header, .entry-header, .post-footer, .page-header,
+  .breadcrumbs, .blog-pager, .comments, #comments, .date-header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 2. SAYFA ZEMİNİ */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    background-color: #f1f5f9 !important;
+  }
+
+  /* Gece modu — html:has() ile html elementi de body'yi takip eder */
+  html:has(body.dark),
+  html:has(body.dark) body {
+    background-color: #0f172a !important;
+  }
+
+  /* 3. BLOGGER SARMALAYICILARINI ŞEFFAFLAŞTIR */
+  .main-wrapper, .main, #main,
+  .content-wrapper, #content-wrapper,
+  #main-wrapper, #main-content-body,
+  .outer-wrapper, #outer-wrapper,
+  .post-body, .entry-content,
+  .post, .page, .blog-posts, .container--dummy,
+  main, article {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 4. UYGULAMA KAPSAYICISINI ORTALA */
+  .container {
+    max-width: 720px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 40px !important; /* ← ÜSTTE BOŞLUK OLMASINI İSTEMİYORSAN 40px YERİNE 0 YAZ */
+    margin-bottom: 40px !important;
+    display: block !important;
+  }
+  @media (max-width: 640px) {
+    .container {
+      margin-top: 15px !important;
+      margin-bottom: 15px !important;
+      padding: 0 10px !important;
+    }
+  }
+
+  .post-body {
+    padding: 0 !important;
+  }
+</style>
+
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
+<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
+
+
+
+
+
+<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
+<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
+<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
+<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
+<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
+
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"></meta>
+    <title>Yapılacaklar Listesi | Profesyonel Görev Takibi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CSS Değişkenleri - Açık Tema */
+        :root {
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --border-light: #eef2ff;
+            --border-hover: #cbd5e1;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --progress-bg: #e2e8f0;
+            --task-hover: #fefefe;
+            --delete-color: #cbd5e1;
+            --delete-hover: #ef4444;
+            --delete-hover-bg: #fee2e2;
+            --badge-bg: #f1f5f9;
+            --badge-text: #1e293b;
+            --template-border: #ecf3fa;
+            --completed-bg: #f8fafc;
+            --completed-text: #64748b;
+            --info-bg: #eef2ff;
+            --info-text: #1e40af;
+            --clear-btn-bg: #f1f5f9;
+            --clear-btn-hover: #fee2e2;
+            --clear-btn-color: #64748b;
+            --clear-btn-hover-color: #dc2626;
+            --modal-overlay: rgba(0,0,0,0.4);
+            --modal-bg: #ffffff;
+            --search-bg: #ffffff;
+            --icon-wrap-bg: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Koyu Tema */
+        body.dark {
+            --bg-body: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e6;
+            --border-light: #334155;
+            --border-hover: #475569;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --progress-bg: #334155;
+            --task-hover: #2d3a4f;
+            --delete-color: #64748b;
+            --delete-hover: #f87171;
+            --delete-hover-bg: #451a1a;
+            --badge-bg: #0f172a;
+            --badge-text: #e2e8f0;
+            --template-border: #334155;
+            --completed-bg: #0f172a;
+            --completed-text: #94a3b8;
+            --info-bg: #1e293b;
+            --info-text: #93c5fd;
+            --clear-btn-bg: #0f172a;
+            --clear-btn-hover: #451a1a;
+            --clear-btn-color: #94a3b8;
+            --clear-btn-hover-color: #f87171;
+            --modal-overlay: rgba(0,0,0,0.6);
+            --modal-bg: #1e293b;
+            --search-bg: #1e293b;
+            --icon-wrap-bg: rgba(59, 130, 246, 0.15);
+        }
+
+        body {
+            background: var(--bg-body);
+            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
+            padding: 2rem 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: background 0.2s;
+        }
+
+        .inner {
+            padding: 2rem 1.8rem;
+        }
+
+        /* Başlık ve tema butonu */
+        .title-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .title {
+            font-size: 1.7rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, var(--accent), #a855f7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .title i {
+            font-size: 1.6rem;
+            color: var(--accent);
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+        .right-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .save-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: var(--badge-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            color: var(--badge-text);
+            transition: all 0.2s;
+        }
+        .save-animate {
+            animation: badgePop 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            background: #10b981 !important;
+            color: white !important;
+        }
+        @keyframes badgePop {
+            0% { transform: scale(1); background: var(--badge-bg); color: var(--badge-text);}
+            30% { transform: scale(1.08); background: #10b981; color: white; }
+            100% { transform: scale(1); background: var(--badge-bg); color: var(--badge-text);}
+        }
+        .theme-toggle {
+            background: var(--badge-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 3rem;
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .theme-toggle:hover {
+            background: var(--border-light);
+        }
+
+        /* Arama kutusu */
+        .search-box {
+            margin-bottom: 1rem;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-light);
+            background: var(--search-bg);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            outline: none;
+            transition: 0.15s;
+        }
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+
+        /* İlerleme alanı */
+        .progress-area {
+            margin-bottom: 1.5rem;
+            background: var(--completed-bg);
+            padding: 1rem 1.2rem;
+            border-radius: 1.5rem;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .progress-bar-bg {
+            background-color: var(--progress-bg);
+            border-radius: 100px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            border-radius: 100px;
+            transition: width 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), background-color 0.3s ease;
+        }
+        .motivation-text {
+            font-size: 0.75rem;
+            margin-top: 0.4rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-height: 2.2rem;
+        }
+        .clear-all-btn {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        .btn-clear, .btn-export {
+            background: var(--clear-btn-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 2rem;
+            padding: 0.4rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--clear-btn-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-clear:hover {
+            background: var(--clear-btn-hover);
+            color: var(--clear-btn-hover-color);
+            border-color: var(--clear-btn-hover-color);
+        }
+        .btn-export:hover {
+            background: var(--border-hover);
+            color: var(--accent);
+        }
+
+        /* Görev ekleme formu */
+        .add-task-form {
+            display: flex;
+            gap: 10px;
+            margin: 0 0 1.8rem 0;
+        }
+        .add-task-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            outline: none;
+            transition: 0.15s;
+        }
+        .add-task-form input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+        .add-task-form button {
+            background: var(--accent);
+            border: none;
+            color: white;
+            padding: 0 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.1s;
+            font-size: 0.85rem;
+        }
+        .add-task-form button:hover {
+            background: var(--accent-hover);
+            transform: scale(0.97);
+        }
+
+        /* Accordion stilleri */
+        .accordion-section {
+            margin: 1.5rem 0 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.6rem 0;
+            user-select: none;
+        }
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .accordion-icon {
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+            color: var(--text-secondary);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 800px;
+            transition: max-height 0.4s ease-in;
+        }
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 0.7rem 1rem;
+            border-radius: 1.2rem;
+            transition: all 0.15s;
+            cursor: grab;
+        }
+        .task-item:active {
+            cursor: grabbing;
+        }
+        .task-item:hover {
+            border-color: var(--border-hover);
+            background: var(--task-hover);
+        }
+        .task-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+        .task-check {
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+        .task-text {
+            font-size: 0.95rem;
+            font-weight: 470;
+            color: var(--text-primary);
+            word-break: break-word;
+            flex: 1;
+        }
+        .task-text.completed {
+            text-decoration: line-through;
+            color: var(--completed-text);
+        }
+        .task-actions {
+            display: flex;
+            gap: 6px;
+        }
+        .edit-task, .delete-task {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--delete-color);
+            transition: 0.1s;
+            padding: 4px 6px;
+            border-radius: 40px;
+        }
+        .edit-task:hover {
+            color: var(--accent);
+            background: var(--delete-hover-bg);
+        }
+        .delete-task:hover {
+            color: var(--delete-hover);
+            background: var(--delete-hover-bg);
+        }
+
+        /* Şablon ve Yedekleme bölümü */
+        .template-section {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--template-border);
+        }
+        .template-header {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .template-card {
+            background: var(--completed-bg);
+            border-radius: 1.2rem;
+            padding: 1rem;
+        }
+        .template-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .template-row:last-child {
+            margin-bottom: 0;
+        }
+        .template-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            min-width: 60px;
+        }
+        .template-input-group {
+            flex: 2;
+            display: flex;
+            gap: 8px;
+            min-width: 180px;
+        }
+        .template-input-group input, .template-select {
+            flex: 2;
+            padding: 0.6rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+        }
+        .template-btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .template-btn {
+            background: var(--badge-bg);
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            transition: 0.1s;
+        }
+        .template-btn:hover {
+            background: var(--border-hover);
+        }
+        .template-btn.full-width {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        .template-delete-btn {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border-color: #ef4444;
+        }
+        .template-delete-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+        .small-note {
+            font-size: 0.7rem;
+            color: var(--completed-text);
+            margin-top: 0.9rem;
+            text-align: center;
+        }
+
+        /* Bilgi Notları Bölümü */
+        .info-note {
+            background: var(--info-bg);
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            margin-top: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-left: 4px solid var(--accent);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .info-item .icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--icon-wrap-bg);
+            border-radius: 50%;
+            color: var(--accent);
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+        .info-item p {
+            margin: 0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--info-text);
+        }
+
+        /* Özel düzenleme modal'ı */
+        .edit-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-overlay);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s;
+        }
+        .edit-modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .edit-box {
+            background: var(--modal-bg);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            max-width: 320px;
+            width: 85%;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-light);
+        }
+        .edit-box input {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            outline: none;
+        }
+        .edit-box input:focus {
+            border-color: var(--accent);
+        }
+        .edit-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        .edit-buttons button {
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .edit-cancel {
+            background: var(--badge-bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+        }
+        .edit-save {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Özel onay modalı */
+        .custom-confirm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-overlay);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s;
+        }
+        .custom-confirm.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .confirm-box {
+            background: var(--modal-bg);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            max-width: 320px;
+            width: 85%;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-light);
+        }
+        .confirm-box p {
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+        .confirm-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.2rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .confirm-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        .confirm-buttons button {
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .confirm-cancel {
+            background: var(--badge-bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+        }
+        .confirm-ok {
+            background: var(--accent);
+            color: white;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"></link>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="inner">
+        <div class="title-bar">
+            <span class="title"><i class="fas fa-clipboard-list"></i> Yapılacaklar Listesi</span>
+            <div class="right-controls">
+                <span class="save-indicator" id="saveIndicator"><i class="fas fa-database"></i> <span>Kaydedildi</span></span>
+                <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> Gece</button>
+            </div>
+        </div>
+
+        <div class="progress-area">
+            <div class="stats-row">
+                <span id="completedCount">0 tamamlandı</span>
+                <span id="totalCount">0 görev</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="motivation-text" id="motivationMsg">✨ Görev ekleyerek akışı başlat</div>
+            <div class="clear-all-btn">
+                <button class="btn-export" id="exportCsvBtn"><i class="fas fa-file-csv"></i> CSV</button>
+                <button class="btn-export" id="exportPdfBtn"><i class="fas fa-file-pdf"></i> PDF</button>
+                <button class="btn-clear" id="clearAllTasksBtn"><i class="fas fa-trash-alt"></i> Tümünü Temizle</button>
+            </div>
+        </div>
+
+        <div class="search-box"><input id="searchInput" placeholder="🔍 Görev ara... (Ctrl+F)" type="text" /></div>
+        <div class="add-task-form">
+            <input autocomplete="off" id="newTaskInput" placeholder="Yeni görev yaz ve Enter..." type="text" />
+            <button id="addTaskBtn"><i class="fas fa-plus"></i> Ekle</button>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-header" data-target="active"><div class="section-title"><i class="fas fa-play-circle"></i> Devam Eden</div><span class="accordion-icon" id="icon-active">▼</span></div>
+            <div class="accordion-content" id="active-content"><div class="task-list" id="activeTasksList"></div></div>
+        </div>
+        <div class="accordion-section">
+            <div class="accordion-header" data-target="completed"><div class="section-title"><i class="fas fa-check-circle"></i> Tamamlananlar</div><span class="accordion-icon" id="icon-completed">▼</span></div>
+            <div class="accordion-content" id="completed-content"><div class="task-list" id="completedTasksList"></div></div>
+        </div>
+
+        <div class="template-section">
+            <div class="template-header"><i class="fas fa-copy"></i> Tekrar Eden Görev Şablonları</div>
+            <div class="template-card">
+                <div class="template-row"><span class="template-label">Kaydet:</span><div class="template-input-group"><input id="templateNameInput" placeholder="Şablon adı" type="text" /><button class="template-btn" id="saveTemplateBtn"><i class="fas fa-save"></i> Kaydet</button></div></div>
+                <div class="template-row"><span class="template-label">Yükle/Sil:</span><div style="display: flex; flex-wrap: wrap; flex: 2; gap: 8px;"><select class="template-select" id="templateSelect"><option value="">— şablon seç —</option></select><button class="template-btn" id="loadTemplateBtn"><i class="fas fa-upload"></i> Yükle</button><button class="template-btn template-delete-btn" id="deleteTemplateBtn"><i class="fas fa-trash-alt"></i> Sil</button></div></div>
+                <div class="small-note">⚡ Mevcut görevlerinizi şablon olarak kaydedin. Yüklemek mevcutları siler.</div>
+            </div>
+        </div>
+        <div class="template-section">
+            <div class="template-header"><i class="fas fa-archive"></i> Veri Yedekleme</div>
+            <div class="template-card"><div class="template-row"><div class="template-btn-group" style="width: 100%;"><button class="template-btn full-width" id="exportDataBtn"><i class="fas fa-download"></i> JSON Yedek İndir</button><button class="template-btn full-width" id="importDataBtn"><i class="fas fa-upload"></i> JSON Yedek Yükle</button><input accept=".json" id="importFileInput" style="display: none;" type="file" /></div></div><div class="small-note">Tüm görev ve şablonlarınızı dışa/içe aktarın.</div></div>
+        </div>
+        
+        <div class="info-note">
+            <div class="info-item">
+                <span class="icon-wrap"><i class="fas fa-database"></i></span>
+                <p>Tüm verileriniz yalnızca <strong>tarayıcınızın yerel deposunda</strong> (localStorage) saklanır. Hiçbir sunucuya gönderilmez. Sayfayı kapatsanız bile verileriniz kaybolmaz.</p>
+            </div>
+            <div class="info-item">
+                <span class="icon-wrap"><i class="fas fa-keyboard"></i></span>
+                <p>Kısayollar: <strong>Ctrl+N / Alt+N</strong> (yeni görev), <strong>Ctrl+E</strong> (düzenle), <strong>Ctrl+F</strong> (arama), <strong>Ctrl+S</strong> (CSV dışa aktar).</p>
+            </div>
+            <div class="info-item">
+                <span class="icon-wrap"><i class="fas fa-edit"></i></span>
+                <p>Görevleri düzenlemek için ✏️, silmek için 🗑️ butonlarını kullanın. Sürükle-bırak ile dilediğiniz gibi sıralayabilirsiniz.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="edit-modal" id="editModal">
+    <div class="edit-box">
+        <input id="editTaskInput" placeholder="Görevi düzenle" type="text" />
+        <div class="edit-buttons">
+            <button class="edit-cancel" id="editCancelBtn">İptal</button>
+            <button class="edit-save" id="editSaveBtn">Kaydet</button>
+        </div>
+    </div>
+</div>
+
+<div class="custom-confirm" id="confirmModal">
+    <div class="confirm-box">
+        <p id="confirmMessage">Tüm görevler kalıcı olarak silinecek. Devam etmek istediğinize emin misiniz?</p>
+        <label class="confirm-checkbox">
+            <input id="confirmDontAskCheckbox" type="checkbox" /> Bir daha sorma
+        </label>
+        <div class="confirm-buttons">
+            <button class="confirm-cancel" id="confirmCancelBtn">İptal</button>
+            <button class="confirm-ok" id="confirmOkBtn">Evet, Devam Et</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let tasks = [], templates = {};
+    let activeOpen = true, completedOpen = true;
+    let sortableActive = null, sortableCompleted = null;
+    let filterText = '';
+    let currentEditTaskId = null;
+
+    // Modal callback yönetimi
+    let pendingConfirmAction = null;
+    let pendingConfirmSkipKey = null;
+
+    // DOM
+    const activeContainer = document.getElementById('activeTasksList');
+    const completedContainer = document.getElementById('completedTasksList');
+    const newTaskInput = document.getElementById('newTaskInput');
+    const addBtn = document.getElementById('addTaskBtn');
+    const completedSpan = document.getElementById('completedCount');
+    const totalSpan = document.getElementById('totalCount');
+    const progressFill = document.getElementById('progressFill');
+    const motivationMsgSpan = document.getElementById('motivationMsg');
+    const saveIndicator = document.getElementById('saveIndicator');
+    const clearAllBtn = document.getElementById('clearAllTasksBtn');
+    const templateNameInput = document.getElementById('templateNameInput');
+    const saveTemplateBtn = document.getElementById('saveTemplateBtn');
+    const templateSelect = document.getElementById('templateSelect');
+    const loadTemplateBtn = document.getElementById('loadTemplateBtn');
+    const deleteTemplateBtn = document.getElementById('deleteTemplateBtn');
+    const exportDataBtn = document.getElementById('exportDataBtn');
+    const importDataBtn = document.getElementById('importDataBtn');
+    const importFileInput = document.getElementById('importFileInput');
+    const themeToggle = document.getElementById('themeToggleBtn');
+    const searchInput = document.getElementById('searchInput');
+    const exportCsvBtn = document.getElementById('exportCsvBtn');
+    const exportPdfBtn = document.getElementById('exportPdfBtn');
+    const modal = document.getElementById('confirmModal');
+    const confirmMessage = document.getElementById('confirmMessage');
+    const confirmDontAsk = document.getElementById('confirmDontAskCheckbox');
+    const confirmCancelBtn = document.getElementById('confirmCancelBtn');
+    const confirmOkBtn = document.getElementById('confirmOkBtn');
+    const editModal = document.getElementById('editModal');
+    const editTaskInput = document.getElementById('editTaskInput');
+    const editCancelBtn = document.getElementById('editCancelBtn');
+    const editSaveBtn = document.getElementById('editSaveBtn');
+
+    // Helper: Skip kontrolü
+    function getSkipFlag(key) { return localStorage.getItem(`skip_${key}`) === 'true'; }
+    function setSkipFlag(key, val) { if(val) localStorage.setItem(`skip_${key}`, 'true'); else localStorage.removeItem(`skip_${key}`); }
+
+    // Modal göster
+    function showConfirm(message, skipKey, onConfirm) {
+        if (skipKey && getSkipFlag(skipKey)) {
+            onConfirm();
+            return;
+        }
+        confirmMessage.innerText = message;
+        confirmDontAsk.checked = false;
+        pendingConfirmAction = onConfirm;
+        pendingConfirmSkipKey = skipKey;
+        modal.classList.add('active');
+    }
+    function hideModal() { modal.classList.remove('active'); pendingConfirmAction = null; }
+
+    // Düzenleme Modal
+    function showEditModal(taskId, currentText) {
+        currentEditTaskId = taskId;
+        editTaskInput.value = currentText;
+        editModal.classList.add('active');
+        editTaskInput.focus();
+    }
+    function hideEditModal() { editModal.classList.remove('active'); currentEditTaskId = null; }
+    function saveEdit() {
+        const newText = editTaskInput.value.trim();
+        if (newText && currentEditTaskId) {
+            const task = tasks.find(t => String(t.id) === String(currentEditTaskId));
+            if (task) {
+                task.text = newText;
+                persistToLocal();
+                renderTasks();
+            }
+        }
+        hideEditModal();
+    }
+
+    // Renk ve animasyon
+    function getRandomProgressColor() { return `hsl(${Math.floor(Math.random()*360)}, ${65+Math.floor(Math.random()*30)}%, ${55+Math.floor(Math.random()*20)}%)`; }
+    function triggerSaveAnimation() { saveIndicator.classList.add('save-animate'); setTimeout(()=>saveIndicator.classList.remove('save-animate'),400); }
+    function persistToLocal() { localStorage.setItem('yapilistem_tasks', JSON.stringify(tasks)); localStorage.setItem('yapilistem_templates', JSON.stringify(templates)); triggerSaveAnimation(); }
+
+    // Çeşitli ve motive edici mesaj havuzu
+    const motivationMessages = {
+        zero: [
+            "✨ Henüz görev yok, ilkini ekle!",
+            "📝 Yeni bir güne yeni görevlerle başlayın.",
+            "🚀 İlk görevini ekleyerek başarıya ilk adımı at!",
+            "💪 Bugün için plan yapmaya ne dersin?",
+            "🎯 Hedeflerini listelemek için harika bir zaman."
+        ],
+        noCompleted: (total) => [
+            `📌 Henüz tamamlanmış görev yok (${total} görev var). İlkini tamamlamaya ne dersin?`,
+            `🎯 ${total} görev bekliyor! Hadi bir tanesini bitirerek başla.`,
+            `💪 ${total} görev seni bekliyor. İlk adımı at, bir görevi tamamla!`,
+            `🚀 ${total} görev var ve hiçbiri tamamlanmamış. Şimdi başlama zamanı!`,
+            `🌟 ${total} görev arasından birini seç ve tamamla. Başarı seninle!`,
+            `⚡ ${total} görev henüz tamamlanmadı. Hadi ilerlemeye başla!`
+        ],
+        early: (completed, total) => [
+            `🚀 Harika başlangıç! ${completed}/${total} tamamlandı.`,
+            `💪 Devam et, ${completed}/${total} görevi bitirdin!`,
+            `🌟 İlk adımlar atıldı, ${completed}/${total} tamam!`,
+            `📈 İyi gidiyorsun, ${completed}/${total} tamamlandı.`,
+            `🎯 Hedefine yaklaşıyorsun, ${completed}/${total} bitti!`,
+            `⚡ Enerjin yüksek, ${completed}/${total} görevi tamamladın!`,
+            `🏆 Bu tempoyla devam, ${completed}/${total} başardın!`
+        ],
+        mid: (percent, completed, total) => [
+            `⚡ Süper gidiyorsun! %${percent} tamamlandı.`,
+            `🎉 Harika ilerleme! %${percent} tamamlandı (${completed}/${total}).`,
+            `💪 Motivasyonun yüksek, %${percent} bitirdin!`,
+            `🌟 Yolun büyük bir kısmını geçtin, %${percent} tamam!`,
+            `📈 İlerleme harikan, %${percent} tamamlandı.`,
+            `🚀 Az kaldı, %${percent} bitirdin!`,
+            `🏆 Bu gidişle hedefe ulaşacaksın, %${percent} tamam!`
+        ],
+        high: (percent, completed, total) => [
+            `🎯 Neredeyse bitti! %${percent} tamamlandı.`,
+            `⚡ Son düzlük! %${percent} tamamlandı, devam et!`,
+            `🌟 Harika iş çıkarıyorsun, %${percent} bitti!`,
+            `🏆 Çok az kaldı, %${percent} tamamlandı.`,
+            `💪 Finale ramak kaldı, %${percent} başardın!`,
+            `🚀 Muhteşem ilerleme! %${percent} tamamlandı.`
+        ],
+        complete: [
+            "🎉 Harika! Tüm görevler tamamlandı. Tebrikler!",
+            "🏆 Mükemmel iş çıkardın! Tüm görevler bitti.",
+            "🌟 Başardın! Bugünlük tüm hedeflerine ulaştın.",
+            "💪 İnanılmazsın! Tüm görevleri tamamladın.",
+            "🎯 Hedeflerini başardın, harikasın!",
+            "⚡ Süper bir gün geçirdin, tüm görevler tamam."
+        ]
+    };
+
+    function getRandomMessage(messageArray) {
+        return messageArray[Math.floor(Math.random() * messageArray.length)];
+    }
+
+    function updateProgressAndMotivation() {
+        const total = tasks.length;
+        const completed = tasks.filter(t => t.completed).length;
+        const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+        
+        progressFill.style.width = `${percent}%`;
+        progressFill.style.backgroundColor = getRandomProgressColor();
+        completedSpan.innerText = `${completed} tamamlandı`;
+        totalSpan.innerText = `${total} görev`;
+
+        let message = "";
+        if (total === 0) {
+            message = getRandomMessage(motivationMessages.zero);
+        } else if (completed === total) {
+            message = getRandomMessage(motivationMessages.complete);
+        } else if (completed === 0) {
+            // Hiç tamamlanmış görev yok, total > 0
+            message = getRandomMessage(motivationMessages.noCompleted(total));
+        } else if (percent < 30) {
+            message = getRandomMessage(motivationMessages.early(completed, total));
+        } else if (percent >= 30 && percent < 70) {
+            message = getRandomMessage(motivationMessages.mid(percent, completed, total));
+        } else if (percent >= 70 && percent < 100) {
+            message = getRandomMessage(motivationMessages.high(percent, completed, total));
+        } else {
+            message = `📌 ${completed}/${total} tamamlandı, yoluna devam et!`;
+        }
+        
+        motivationMsgSpan.innerHTML = message;
+    }
+
+    // Görev render
+    function renderTasks() {
+        const filtered = tasks.filter(t => t.text.toLowerCase().includes(filterText.toLowerCase()));
+        const activeTasks = filtered.filter(t => !t.completed);
+        const completedTasks = filtered.filter(t => t.completed);
+        activeContainer.innerHTML = '';
+        if (activeTasks.length===0) activeContainer.innerHTML = `<div style="text-align:center; padding:1rem; color:var(--completed-text)"><i class="fas fa-check-double"></i> Gösterilecek aktif görev yok</div>`;
+        else activeTasks.forEach(task => activeContainer.appendChild(createTaskElement(task)));
+        completedContainer.innerHTML = '';
+        if (completedTasks.length===0) completedContainer.innerHTML = `<div style="text-align:center; padding:1rem; color:var(--completed-text)"><i class="fas fa-inbox"></i> Tamamlanan görev yok</div>`;
+        else completedTasks.forEach(task => completedContainer.appendChild(createTaskElement(task)));
+        updateProgressAndMotivation();
+        if (sortableActive) sortableActive.destroy();
+        if (sortableCompleted) sortableCompleted.destroy();
+        sortableActive = new Sortable(activeContainer, { animation: 150, onEnd: () => reorderTasks('active') });
+        sortableCompleted = new Sortable(completedContainer, { animation: 150, onEnd: () => reorderTasks('completed') });
+    }
+    
+    function reorderTasks(type) {
+        const container = (type === 'active') ? activeContainer : completedContainer;
+        const taskElements = container.querySelectorAll('.task-item');
+        const newOrderIds = Array.from(taskElements).map(el => el.getAttribute('data-id'));
+        
+        const newOrder = [];
+        for (let id of newOrderIds) {
+            const task = tasks.find(t => String(t.id) === String(id)); 
+            if (task) newOrder.push(task);
+        }
+        
+        const remaining = tasks.filter(t => !newOrderIds.includes(String(t.id)));
+        
+        tasks = [...newOrder, ...remaining];
+        persistToLocal();
+        renderTasks();
+    }
+    
+    function createTaskElement(task) {
+        const div = document.createElement('div'); div.className = 'task-item'; div.setAttribute('data-id', task.id);
+        const leftDiv = document.createElement('div'); leftDiv.className = 'task-left';
+        const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.className = 'task-check'; checkbox.checked = task.completed;
+        checkbox.addEventListener('change', () => { task.completed = checkbox.checked; persistToLocal(); renderTasks(); });
+        const textSpan = document.createElement('span'); textSpan.className = `task-text ${task.completed ? 'completed' : ''}`; textSpan.innerText = task.text;
+        const actions = document.createElement('div'); actions.className = 'task-actions';
+        const editBtn = document.createElement('button'); editBtn.className = 'edit-task'; editBtn.innerHTML = '<i class="fas fa-edit"></i>'; editBtn.title = 'Düzenle';
+        editBtn.addEventListener('click', (e) => { e.stopPropagation(); showEditModal(task.id, task.text); });
+        const delBtn = document.createElement('button'); delBtn.className = 'delete-task'; delBtn.innerHTML = '<i class="fas fa-times"></i>'; delBtn.title = 'Sil';
+        delBtn.addEventListener('click', (e) => { e.stopPropagation(); tasks = tasks.filter(t => String(t.id) !== String(task.id)); persistToLocal(); renderTasks(); });
+        actions.appendChild(editBtn); actions.appendChild(delBtn);
+        leftDiv.appendChild(checkbox); leftDiv.appendChild(textSpan); div.appendChild(leftDiv); div.appendChild(actions);
+        return div;
+    }
+    
+    function addNewTask() { const text = newTaskInput.value.trim(); if(!text) return alert("Bir görev yazın"); tasks.push({ id: Date.now()+Math.random().toString(36).substring(2,6), text: text, completed: false }); newTaskInput.value=""; persistToLocal(); renderTasks(); newTaskInput.focus(); }
+
+    // Tümünü Temizle
+    function performClearAll() { if(tasks.length===0) return alert("Zaten boş"); tasks=[]; persistToLocal(); renderTasks(); alert("Tüm görevler temizlendi."); }
+    function confirmClearAll() { showConfirm("Tüm görevler kalıcı olarak silinecek. Devam etmek istediğinize emin misiniz?", "clearAll", performClearAll); }
+
+    // Şablon işlemleri
+    function refreshTemplateSelect() { templateSelect.innerHTML='<option value="">— şablon seç —</option>'; const names=Object.keys(templates); if(names.length===0) templateSelect.innerHTML+='<option disabled>Kayıtlı şablon yok</option>'; else names.forEach(n=>{const opt=document.createElement('option'); opt.value=n; opt.textContent=n; templateSelect.appendChild(opt);}); }
+    function saveCurrentAsTemplate() { const name=templateNameInput.value.trim(); if(!name) return alert("Şablon adı girin"); if(tasks.length===0) return alert("Kaydedilecek görev yok"); templates[name]=tasks.map(t=>t.text); persistToLocal(); refreshTemplateSelect(); templateNameInput.value=""; alert(`"${name}" kaydedildi`); }
+    
+    function performLoadTemplate() {
+        const name = templateSelect.value.trim();
+        if (!name) { alert("Lütfen bir şablon seçin."); return; }
+        const tmpl = templates[name];
+        if (!tmpl || !tmpl.length) { alert("Seçili şablon boş veya bulunamadı."); return; }
+        tasks = tmpl.map((text, idx) => ({ id: Date.now() + idx + Math.random().toString(36).substring(2, 6), text: text, completed: false }));
+        persistToLocal(); renderTasks(); alert(`"${name}" yüklendi, ${tasks.length} görev hazır`);
+    }
+    
+    function confirmLoadTemplate() {
+        const name = templateSelect.value;
+        if(!name) { alert("Şablon seçin"); return; }
+        const tmpl = templates[name];
+        if(!tmpl||!tmpl.length) { alert("Şablon boş"); return; }
+        showConfirm(`"${name}" şablonu yüklenecek. Mevcut tüm görevleriniz silinecek, devam etmek istiyor musunuz?`, "loadTemplate", performLoadTemplate);
+    }
+    
+    function performDeleteTemplate() {
+        const name = templateSelect.value;
+        if(!name) { alert("Şablon seçin"); return; }
+        delete templates[name];
+        persistToLocal(); refreshTemplateSelect(); templateSelect.value="";
+        alert(`"${name}" silindi`);
+    }
+    function confirmDeleteTemplate() {
+        const name = templateSelect.value;
+        if(!name) { alert("Şablon seçin"); return; }
+        showConfirm(`"${name}" şablonunu kalıcı olarak silmek istediğinize emin misiniz?`, "deleteTemplate", performDeleteTemplate);
+    }
+
+    // Yedekleme ve dışa aktarma
+    function exportJSON() { const blob=new Blob([JSON.stringify({tasks,templates},null,2)],{type:"application/json"}); saveAs(blob,`yapilacaklar_yedek_${new Date().toISOString().split('T')[0]}.json`); alert("JSON yedeği indirildi"); }
+    function importJSON(file) { const reader=new FileReader(); reader.onload=e=>{ try{ const data=JSON.parse(e.target.result); if(data.tasks!==undefined) tasks=data.tasks; if(data.templates!==undefined) templates=data.templates; persistToLocal(); renderTasks(); refreshTemplateSelect(); alert("Yedek başarıyla yüklendi"); } catch(err){ alert("Geçersiz dosya"); } importFileInput.value=""; }; reader.readAsText(file); }
+    function exportCSV() { let csv="\"Görev\",\"Durum\"\n"; tasks.forEach(t=>{ csv+=`"${t.text.replace(/"/g,'""')}",${t.completed?"Tamamlandı":"Devam Ediyor"}\n`; }); const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}); saveAs(blob,`gorevler_${new Date().toISOString().split('T')[0]}.csv`); alert("CSV indirildi"); }
+    
+    // PDF (pdfMake ile vektörel ve seçilebilir)
+    function exportPDF() {
+        const tableBody = [
+            [{ text: '#', style: 'tableHeader' }, { text: 'Görev', style: 'tableHeader' }, { text: 'Durum', style: 'tableHeader' }]
+        ];
+        tasks.forEach((t, i) => {
+            tableBody.push([
+                { text: (i + 1).toString(), alignment: 'center', margin: [0, 5, 0, 5] },
+                { text: t.text, margin: [0, 5, 0, 5] },
+                { text: t.completed ? 'Tamamlandı' : 'Devam Ediyor', color: t.completed ? '#10b981' : '#f59e0b', bold: true, margin: [0, 5, 0, 5] }
+            ]);
+        });
+        const docDefinition = {
+            content: [
+                { text: 'Yapılacaklar Listesi', style: 'header' },
+                { style: 'tableExample', table: { headerRows: 1, widths: [30, '*', 120], body: tableBody }, layout: {
+                    fillColor: (rowIndex) => rowIndex === 0 ? '#2563eb' : (rowIndex % 2 === 0 ? '#f8fafc' : null),
+                    hLineWidth: () => 1, vLineWidth: () => 1,
+                    hLineColor: (i) => (i === 0 || i === 1) ? '#1d4ed8' : '#cbd5e1',
+                    vLineColor: () => '#cbd5e1'
+                } },
+                { text: `Oluşturulma Tarihi: ${new Date().toLocaleDateString('tr-TR')}`, style: 'footer' }
+            ],
+            styles: {
+                header: { fontSize: 22, bold: true, color: '#2563eb', margin: [0, 0, 0, 20], alignment: 'center' },
+                tableHeader: { bold: true, fontSize: 13, color: 'white', alignment: 'center', margin: [0, 8, 0, 8] },
+                tableExample: { margin: [0, 5, 0, 15] },
+                footer: { fontSize: 10, color: '#64748b', alignment: 'right', margin: [0, 20, 0, 0] }
+            }
+        };
+        pdfMake.createPdf(docDefinition).download(`gorevler_${new Date().toISOString().split('T')[0]}.pdf`);
+    }
+
+    // Tema
+    function initTheme() { const saved=localStorage.getItem('yapilistem_theme'); if(saved==='dark'){ document.body.classList.add('dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; }else{ document.body.classList.remove('dark'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; } }
+    function toggleTheme() { if(document.body.classList.contains('dark')){ document.body.classList.remove('dark'); localStorage.setItem('yapilistem_theme','light'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; }else{ document.body.classList.add('dark'); localStorage.setItem('yapilistem_theme','dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } }
+    function setupAccordion() {
+        const activeHeader=document.querySelector('.accordion-header[data-target="active"]'), completedHeader=document.querySelector('.accordion-header[data-target="completed"]'), activeContent=document.getElementById('active-content'), completedContent=document.getElementById('completed-content'), iconActive=document.getElementById('icon-active'), iconCompleted=document.getElementById('icon-completed');
+        function toggleActive(){ activeOpen=!activeOpen; if(activeOpen){ activeContent.classList.add('open'); iconActive.innerHTML='▼'; }else{ activeContent.classList.remove('open'); iconActive.innerHTML='▶'; } }
+        function toggleCompleted(){ completedOpen=!completedOpen; if(completedOpen){ completedContent.classList.add('open'); iconCompleted.innerHTML='▼'; }else{ completedContent.classList.remove('open'); iconCompleted.innerHTML='▶'; } }
+        if(activeHeader) activeHeader.addEventListener('click',toggleActive); if(completedHeader) completedHeader.addEventListener('click',toggleCompleted);
+        activeContent.classList.add('open'); completedContent.classList.add('open');
+    }
+
+    function loadInitialData() {
+        const storedTasks=localStorage.getItem('yapilistem_tasks'), storedTemplates=localStorage.getItem('yapilistem_templates');
+        if(storedTasks) tasks=JSON.parse(storedTasks); else tasks=[{id:1001,text:"Sabah rutinini planla",completed:false},{id:1002,text:"Önemli projeyi gözden geçir",completed:false},{id:1003,text:"30 dakika odaklı çalışma",completed:false}];
+        if(storedTemplates) templates=JSON.parse(storedTemplates); else templates={"Günlük Rutin":["Sabah egzersizi","Su iç (8 bardak)","Günlük planlama","E-postaları kontrol et","Öğrenme 20dk"],"Haftalık Hedefler":["Haftalık rapor","Toplantı hazırlığı","Kişisel gelişim"]};
+        refreshTemplateSelect(); renderTasks();
+    }
+
+    function bindEvents() {
+        addBtn.addEventListener('click',addNewTask); newTaskInput.addEventListener('keypress',e=>{if(e.key==='Enter'){e.preventDefault(); addNewTask();}});
+        saveTemplateBtn.addEventListener('click',saveCurrentAsTemplate);
+        loadTemplateBtn.addEventListener('click',confirmLoadTemplate);
+        deleteTemplateBtn.addEventListener('click',confirmDeleteTemplate);
+        exportDataBtn.addEventListener('click',exportJSON); importDataBtn.addEventListener('click',()=>importFileInput.click()); importFileInput.addEventListener('change',e=>{if(e.target.files[0]) importJSON(e.target.files[0]);});
+        clearAllBtn.addEventListener('click',confirmClearAll);
+        themeToggle.addEventListener('click',toggleTheme); searchInput.addEventListener('input',e=>{filterText=e.target.value; renderTasks();});
+        exportCsvBtn.addEventListener('click',exportCSV); exportPdfBtn.addEventListener('click',exportPDF);
+        window.addEventListener('keydown',e=>{
+            if((e.ctrlKey || e.altKey) && e.key.toLowerCase() === 'n'){ e.preventDefault(); e.stopPropagation(); newTaskInput.focus(); }
+            if(e.ctrlKey && e.code === 'KeyF'){ e.preventDefault(); searchInput.focus(); }
+            if(e.ctrlKey && e.code === 'KeyS'){ e.preventDefault(); exportCSV(); }
+            if(e.ctrlKey && e.code === 'KeyE'){ const activeItem=document.querySelector('.task-item .edit-task'); if(activeItem) activeItem.click(); }
+        });
+        confirmCancelBtn.addEventListener('click',hideModal);
+        confirmOkBtn.addEventListener('click',()=>{
+            if(pendingConfirmAction) {
+                if(pendingConfirmSkipKey && confirmDontAsk.checked) setSkipFlag(pendingConfirmSkipKey, true);
+                pendingConfirmAction(); pendingConfirmAction = null;
+            }
+            hideModal();
+        });
+        modal.addEventListener('click',(e)=>{if(e.target===modal) hideModal();});
+        editCancelBtn.addEventListener('click', hideEditModal);
+        editSaveBtn.addEventListener('click', saveEdit);
+        editTaskInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') saveEdit(); });
+        editModal.addEventListener('click', (e) => { if(e.target === editModal) hideEditModal(); });
+    }
+
+    loadInitialData(); bindEvents(); initTheme(); setupAccordion();
+</script>
+</body>
+</html>
+
+
+<!--UYGULAMAMIZIN KODUNUN SONU-->
+<!--UYGULAMAMIZIN KODUNUN SONU-->
+<!--UYGULAMAMIZIN KODUNUN SONU-->
+<!--UYGULAMAMIZIN KODUNUN SONU-->
+<!--UYGULAMAMIZIN KODUNUN SONU-->
