@@ -875,6 +875,7 @@
             <div class="right-controls">
                 <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?" style="padding: 0.4rem 0.7rem;"><i class="fas fa-question"></i></button>
                 <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya" style="padding: 0.4rem 0.7rem;"><i class="fas fa-link"></i></button>
+                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle" style="padding: 0.4rem 0.7rem;"><i class="fas fa-bookmark"></i></button>
                 <span class="save-indicator" id="saveIndicator"><i class="fas fa-database"></i> <span>Kaydedildi</span></span>
                 <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> Gece</button>
             </div>
@@ -1045,6 +1046,7 @@
     // Yeni Eklenen Modallar ve Butonlar
     const helpBtn = document.getElementById('helpBtn');
     const socialBtn = document.getElementById('socialBtn');
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
     const helpModal = document.getElementById('helpModal');
     const socialModal = document.getElementById('socialModal');
     const closeHelpBtn = document.getElementById('closeHelpBtn');
@@ -1364,6 +1366,13 @@
         socialBtn.addEventListener('click', () => socialModal.classList.add('active'));
         closeHelpBtn.addEventListener('click', () => helpModal.classList.remove('active'));
         closeSocialBtn.addEventListener('click', () => socialModal.classList.remove('active'));
+        
+        // Yer İmi Butonu
+        bookmarkBtn.addEventListener('click', () => {
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            const shortcut = isMac ? 'Cmd+D' : 'Ctrl+D';
+            alert(`Sayfayı yer imlerine (favorilere) eklemek için klavyenizden ${shortcut} tuşlarına basabilirsiniz.`);
+        });
         
         // Modalların Dışına Tıklayınca Kapanması
         helpModal.addEventListener('click', (e) => { if(e.target === helpModal) helpModal.classList.remove('active'); });
