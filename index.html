@@ -228,8 +228,9 @@
         }
         .right-controls {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .save-indicator {
             display: inline-flex;
@@ -764,6 +765,99 @@
             background: var(--accent);
             color: white;
         }
+
+        /* Bilgi & Sosyal Medya Modalları */
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-overlay);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s;
+        }
+        .info-modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .info-box {
+            background: var(--modal-bg);
+            border-radius: 1.5rem;
+            padding: 2rem 1.5rem 1.5rem; 
+            max-width: 380px;
+            width: 85%;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-light);
+            position: relative;
+        }
+        .info-box h3 {
+            margin-bottom: 1.2rem;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-box h3 i {
+            color: var(--accent);
+        }
+        .info-box p {
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .social-link-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-body);
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            border: 1px solid var(--border-light);
+        }
+        .social-link-btn:hover {
+            border-color: var(--accent);
+            background: var(--icon-wrap-bg);
+            transform: translateY(-2px);
+        }
+        .social-link-btn i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+        .close-modal-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .close-modal-btn:hover {
+            color: var(--delete-hover);
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"></link>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
@@ -780,6 +874,8 @@
             <span class="title"><i class="fas fa-clipboard-list"></i> Yapılacaklar Listesi</span>
             <div class="right-controls">
                 <span class="save-indicator" id="saveIndicator"><i class="fas fa-database"></i> <span>Kaydedildi</span></span>
+                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?" style="padding: 0.4rem 0.7rem;"><i class="fas fa-question"></i></button>
+                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya" style="padding: 0.4rem 0.7rem;"><i class="fas fa-link"></i></button>
                 <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> Gece</button>
             </div>
         </div>
@@ -867,6 +963,41 @@
     </div>
 </div>
 
+<!-- Nasıl Kullanılır Modalı -->
+<div class="info-modal" id="helpModal">
+    <div class="info-box">
+        <button class="close-modal-btn" id="closeHelpBtn"><i class="fas fa-times"></i></button>
+        <h3><i class="fas fa-question-circle"></i> Nasıl Kullanılır?</h3>
+        <p><strong>Görev Ekleme:</strong> Alt kısımdaki kutuya görevinizi yazıp 'Ekle' butonuna basın veya Enter tuşunu kullanın.</p>
+        <p><strong>Düzenleme & Silme:</strong> Görevlerin sağındaki ✏️ butonu ile düzenleyebilir, 🗑️ butonu ile silebilirsiniz.</p>
+        <p><strong>Sıralama:</strong> Görevleri sürükle-bırak yöntemiyle dilediğiniz gibi sıralayabilirsiniz.</p>
+        <p><strong>Şablonlar:</strong> Tekrar eden görevlerinizi "Şablon" olarak kaydedip, tek tıkla geri yükleyebilirsiniz.</p>
+        <p><strong>Kısayollar:</strong> Ctrl+N (Yeni Görev), Ctrl+E (Düzenle), Ctrl+F (Arama), Ctrl+S (CSV İndir).</p>
+    </div>
+</div>
+
+<!-- Uygulamalar & Sosyal Medya Modalı -->
+<div class="info-modal" id="socialModal">
+    <div class="info-box">
+        <button class="close-modal-btn" id="closeSocialBtn"><i class="fas fa-times"></i></button>
+        <h3><i class="fas fa-layer-group"></i> Uygulamalar & Sosyal Medya</h3>
+        <div class="social-links">
+            <a href="https://github.com/ufukdemiir" target="_blank" class="social-link-btn">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/ufukdemiir/" target="_blank" class="social-link-btn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://tr.pinterest.com/demiirufuk/" target="_blank" class="social-link-btn">
+                <i class="fab fa-pinterest"></i> Pinterest
+            </a>
+            <a href="https://ufukdemiir.github.io/GuneBaslarken/" target="_blank" class="social-link-btn">
+                <i class="fas fa-sun"></i> Güne Başlarken Uygulaması
+            </a>
+        </div>
+    </div>
+</div>
+
 <script>
     let tasks = [], templates = {};
     let activeOpen = true, completedOpen = true;
@@ -910,6 +1041,14 @@
     const editTaskInput = document.getElementById('editTaskInput');
     const editCancelBtn = document.getElementById('editCancelBtn');
     const editSaveBtn = document.getElementById('editSaveBtn');
+    
+    // Yeni Eklenen Modallar ve Butonlar
+    const helpBtn = document.getElementById('helpBtn');
+    const socialBtn = document.getElementById('socialBtn');
+    const helpModal = document.getElementById('helpModal');
+    const socialModal = document.getElementById('socialModal');
+    const closeHelpBtn = document.getElementById('closeHelpBtn');
+    const closeSocialBtn = document.getElementById('closeSocialBtn');
 
     // Helper: Skip kontrolü
     function getSkipFlag(key) { return localStorage.getItem(`skip_${key}`) === 'true'; }
@@ -1219,16 +1358,19 @@
         editSaveBtn.addEventListener('click', saveEdit);
         editTaskInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') saveEdit(); });
         editModal.addEventListener('click', (e) => { if(e.target === editModal) hideEditModal(); });
+
+        // Yeni Butonların Event Listener'ları
+        helpBtn.addEventListener('click', () => helpModal.classList.add('active'));
+        socialBtn.addEventListener('click', () => socialModal.classList.add('active'));
+        closeHelpBtn.addEventListener('click', () => helpModal.classList.remove('active'));
+        closeSocialBtn.addEventListener('click', () => socialModal.classList.remove('active'));
+        
+        // Modalların Dışına Tıklayınca Kapanması
+        helpModal.addEventListener('click', (e) => { if(e.target === helpModal) helpModal.classList.remove('active'); });
+        socialModal.addEventListener('click', (e) => { if(e.target === socialModal) socialModal.classList.remove('active'); });
     }
 
     loadInitialData(); bindEvents(); initTheme(); setupAccordion();
 </script>
 </body>
 </html>
-
-
-<!--UYGULAMAMIZIN KODUNUN SONU-->
-<!--UYGULAMAMIZIN KODUNUN SONU-->
-<!--UYGULAMAMIZIN KODUNUN SONU-->
-<!--UYGULAMAMIZIN KODUNUN SONU-->
-<!--UYGULAMAMIZIN KODUNUN SONU-->
