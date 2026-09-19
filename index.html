@@ -398,9 +398,10 @@
         /* Kapsamlı Mobil Medya Sorguları */
         @media (max-width: 640px) {
             .title-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .right-controls { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: 8px; }
-            .theme-toggle, .save-indicator { justify-content: center; text-align: center; width: 100%; flex: 1; }
-            .save-indicator { grid-column: span 2; }
+            .right-controls { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+            .theme-toggle, .save-indicator { justify-content: center; text-align: center; width: 100%; }
+            .save-indicator { grid-column: 1 / -1; }
+            .theme-text { display: none; }
             
             .stats-row { flex-direction: column; gap: 4px; align-items: center; }
             .clear-all-btn button { flex: 1 1 100%; }
@@ -423,11 +424,11 @@
         <div class="title-bar">
             <span class="title"><i class="fas fa-clipboard-check"></i> Yapılacaklar Listesi</span>
             <div class="right-controls">
-                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?"><i class="fas fa-circle-question"></i></button>
-                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya"><i class="fas fa-arrow-up-right-from-square"></i></button>
-                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle"><i class="fas fa-bookmark"></i></button>
                 <span class="save-indicator" id="saveIndicator"><i class="fas fa-database"></i> <span>Kaydedildi</span></span>
-                <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> Gece</button>
+                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle"><i class="fas fa-bookmark"></i></button>
+                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya"><i class="fas fa-arrow-up-right-from-square"></i></button>
+                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?"><i class="fas fa-circle-question"></i></button>
+                <button class="theme-toggle" id="themeToggleBtn" title="Gece/Gündüz Modu"><i class="fas fa-moon"></i> <span class="theme-text">Gece</span></button>
             </div>
         </div>
 
@@ -854,12 +855,12 @@
 
     function initTheme() { 
         const saved = localStorage.getItem('yapilistem_theme'); 
-        if(saved === 'dark') { document.body.classList.add('dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } 
-        else { document.body.classList.remove('dark'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; } 
+        if(saved === 'dark') { document.body.classList.add('dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> <span class="theme-text">Gündüz</span>'; } 
+        else { document.body.classList.remove('dark'); themeToggle.innerHTML='<i class="fas fa-moon"></i> <span class="theme-text">Gece</span>'; } 
     }
     function toggleTheme() { 
-        if(document.body.classList.contains('dark')) { document.body.classList.remove('dark'); localStorage.setItem('yapilistem_theme','light'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; } 
-        else { document.body.classList.add('dark'); localStorage.setItem('yapilistem_theme','dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } 
+        if(document.body.classList.contains('dark')) { document.body.classList.remove('dark'); localStorage.setItem('yapilistem_theme','light'); themeToggle.innerHTML='<i class="fas fa-moon"></i> <span class="theme-text">Gece</span>'; } 
+        else { document.body.classList.add('dark'); localStorage.setItem('yapilistem_theme','dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> <span class="theme-text">Gündüz</span>'; } 
     }
 
     function setupAccordion() {
