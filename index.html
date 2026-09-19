@@ -559,13 +559,14 @@
         .template-input-group {
             flex: 2;
             display: flex;
+            flex-wrap: wrap; /* Elementlerin dar ekranda alt satıra geçmesini sağlar */
             gap: 8px;
-            min-width: 180px;
+            min-width: 100%; /* Sıkışmayı ve taşmayı engeller */
         }
         
         .template-input-group input {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            flex: 2;
+            flex: 1 1 140px; /* Küçüldüğünde esnemesine olanak tanır */
             padding: 0.6rem 1rem;
             border-radius: 2rem;
             border: 1px solid var(--border-light);
@@ -574,6 +575,10 @@
             font-size: 0.85rem;
             font-weight: 500;
             outline: none;
+        }
+
+        .template-input-group .template-btn {
+            flex: 1 1 auto; /* Butonun taşmasını engeller ve hizayı korur */
         }
 
         /* Özel Revize Edilmiş Select Menüsü */
