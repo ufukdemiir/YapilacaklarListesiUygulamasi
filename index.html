@@ -1,109 +1,25 @@
-<h1 style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">Yapılacaklar Listesi Uygulaması: Profesyonel Görev Takibi</h1>
-
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN BAŞLANGICI-->
-
-<style>
-  /* ============================================================
-     BLOGGER TEMA İZOLASYONU
-     Bu kodun altına uygulama kodunu yapıştırın, başka işlem yok.
-     ============================================================ */
-
-  /* 1. BLOGGER ARAYÜZ ÖĞELERİNİ GİZLE */
-  header, footer, nav, aside,
-  #sidebar, #sidebar-wrapper, #header, #header-wrapper, #footer,
-  #navbar, #navbar-iframe, .navbar-iframe-container,
-  .header, .footer, .navbar, .nav, .sidebar,
-  .post-title, .entry-title, .page-title,
-  h1.title, h2.title, h3.post-title, h1.text-3xl,
-  .post-header, .entry-header, .post-footer, .page-header,
-  .breadcrumbs, .blog-pager, .comments, #comments, .date-header {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* 2. SAYFA ZEMİNİ */
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    background-color: #f1f5f9 !important;
-  }
-
-  /* Gece modu — html:has() ile html elementi de body'yi takip eder */
-  html:has(body.dark),
-  html:has(body.dark) body {
-    background-color: #0f172a !important;
-  }
-
-  /* 3. BLOGGER SARMALAYICILARINI ŞEFFAFLAŞTIR */
-  .main-wrapper, .main, #main,
-  .content-wrapper, #content-wrapper,
-  #main-wrapper, #main-content-body,
-  .outer-wrapper, #outer-wrapper,
-  .post-body, .entry-content,
-  .post, .page, .blog-posts, .container--dummy,
-  main, article {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  /* 4. UYGULAMA KAPSAYICISINI ORTALA */
-  .container {
-    max-width: 720px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 40px !important; /* ← ÜSTTE BOŞLUK OLMASINI İSTEMİYORSAN 40px YERİNE 0 YAZ */
-    margin-bottom: 40px !important;
-    display: block !important;
-  }
-  @media (max-width: 640px) {
-    .container {
-      margin-top: 15px !important;
-      margin-bottom: 15px !important;
-      padding: 0 10px !important;
-    }
-  }
-
-  .post-body {
-    padding: 0 !important;
-  }
-</style>
-
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
-<!--ANA TEMADAN BAĞIMSIZ BİR SAYFA OLMASI İÇİN GEREKEN KODLARIN SONU-->
-
-
-
-
-
-<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
-<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
-<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
-<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
-<!--UYGULAMAMIZIN KODUNUN BAŞLANGICI-->
-
-
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8"></meta>
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"></meta>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">
     <title>📋 Yapılacaklar Listesi | Profesyonel Görev Takibi</title>
-  <meta name="description" content="Sunucusuz, kayıt gerektirmeyen, tarayıcı tabanlı verilerinizi yerel olarak saklayan sade ve işlevsel bir yapılacaklar listesi ve görev takip uygulaması." />
+    <meta name="description" content="Sunucusuz, kayıt gerektirmeyen, tarayıcı tabanlı verilerinizi yerel olarak saklayan sade ve işlevsel bir yapılacaklar listesi ve görev takip uygulaması." />
+    
+    <!-- İkonlar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Zarif Tipografi için Google Fonts: Lora (Tırnaklı) & Plus Jakarta Sans (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Gerekli Kütüphaneler -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -111,77 +27,118 @@
             box-sizing: border-box;
         }
 
-        /* CSS Değişkenleri - Açık Tema */
+        /* CSS Değişkenleri - Sıcak Açık Tema */
         :root {
-            --bg-body: #f1f5f9;
+            --bg-body: #faf6f3; /* Sıcak krem beyazı */
             --bg-card: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --border-light: #eef2ff;
-            --border-hover: #cbd5e1;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --progress-bg: #e2e8f0;
-            --task-hover: #fefefe;
-            --delete-color: #cbd5e1;
+            --text-primary: #2d241f; /* Koyu kahve/gri */
+            --text-secondary: #6b5c54;
+            --border-light: #f0e6dd;
+            --border-hover: #dccac0;
+            --accent: #ea580c; /* Zarif, üretken yanık turuncu */
+            --accent-hover: #c2410c;
+            --progress-bg: #f4ede6;
+            --task-hover: #fffdfc;
+            --delete-color: #d1c4bc;
             --delete-hover: #ef4444;
             --delete-hover-bg: #fee2e2;
-            --badge-bg: #f1f5f9;
-            --badge-text: #1e293b;
-            --template-border: #ecf3fa;
-            --completed-bg: #f8fafc;
-            --completed-text: #64748b;
-            --info-bg: #eef2ff;
-            --info-text: #1e40af;
-            --clear-btn-bg: #f1f5f9;
+            --badge-bg: #f4ede6;
+            --badge-text: #4a3831;
+            --template-border: #f0e6dd;
+            --completed-bg: #fcf9f7;
+            --completed-text: #8c7c73;
+            --info-bg: #fff7ed;
+            --info-text: #9a3412;
+            --clear-btn-bg: #f4ede6;
             --clear-btn-hover: #fee2e2;
-            --clear-btn-color: #64748b;
+            --clear-btn-color: #8c7c73;
             --clear-btn-hover-color: #dc2626;
-            --modal-overlay: rgba(0,0,0,0.4);
+            --modal-overlay: rgba(45, 36, 31, 0.65);
             --modal-bg: #ffffff;
             --search-bg: #ffffff;
-            --icon-wrap-bg: rgba(37, 99, 235, 0.1);
+            --icon-wrap-bg: rgba(234, 88, 12, 0.1);
+            --shadow-sm: 0 4px 6px -1px rgba(234, 88, 12, 0.05);
+            --shadow-lg: 0 20px 35px -12px rgba(45, 36, 31, 0.1);
+            --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
         }
 
-        /* Koyu Tema */
+        /* Koyu Tema - Antrasit ve Turuncu Uyumu */
         body.dark {
-            --bg-body: #0f172a;
-            --bg-card: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e6;
-            --border-light: #334155;
-            --border-hover: #475569;
-            --accent: #3b82f6;
-            --accent-hover: #60a5fa;
-            --progress-bg: #334155;
-            --task-hover: #2d3a4f;
-            --delete-color: #64748b;
+            --bg-body: #1c1917; /* Stone 900 */
+            --bg-card: #292524; /* Stone 800 */
+            --text-primary: #f5f5f4; /* Stone 100 */
+            --text-secondary: #a8a29e; /* Stone 400 */
+            --border-light: #44403c; /* Stone 700 */
+            --border-hover: #57534e;
+            --accent: #f97316; /* Koyu modda daha parlak turuncu */
+            --accent-hover: #fdba74;
+            --progress-bg: #1c1917;
+            --task-hover: #312e2b;
+            --delete-color: #78716c;
             --delete-hover: #f87171;
-            --delete-hover-bg: #451a1a;
-            --badge-bg: #0f172a;
-            --badge-text: #e2e8f0;
-            --template-border: #334155;
-            --completed-bg: #0f172a;
-            --completed-text: #94a3b8;
-            --info-bg: #1e293b;
-            --info-text: #93c5fd;
-            --clear-btn-bg: #0f172a;
-            --clear-btn-hover: #451a1a;
-            --clear-btn-color: #94a3b8;
+            --delete-hover-bg: rgba(248, 113, 113, 0.15);
+            --badge-bg: #1c1917;
+            --badge-text: #e7e5e4;
+            --template-border: #44403c;
+            --completed-bg: #221f1e;
+            --completed-text: #78716c;
+            --info-bg: #312e2b;
+            --info-text: #fdba74;
+            --clear-btn-bg: #1c1917;
+            --clear-btn-hover: rgba(248, 113, 113, 0.15);
+            --clear-btn-color: #a8a29e;
             --clear-btn-hover-color: #f87171;
-            --modal-overlay: rgba(0,0,0,0.6);
-            --modal-bg: #1e293b;
-            --search-bg: #1e293b;
-            --icon-wrap-bg: rgba(59, 130, 246, 0.15);
+            --modal-overlay: rgba(0, 0, 0, 0.75);
+            --modal-bg: #292524;
+            --search-bg: #292524;
+            --icon-wrap-bg: rgba(249, 115, 22, 0.15);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+            --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f97316'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        }
+
+        /* Özel Kaydırma Çubuğu (Scrollbar) */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-hover);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        /* Flaş patlamasını engelleyen ana geçiş ayarları */
+        html {
+            background-color: var(--bg-body);
+            transition: background-color 0.4s ease;
         }
 
         body {
-            background: var(--bg-body);
-            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
-            padding: 2rem 1.5rem;
+            background-color: var(--bg-body);
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            padding: 3rem 1.5rem;
             color: var(--text-primary);
-            line-height: 1.4;
-            transition: background 0.2s, color 0.2s;
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Genel odak (focus) iyileştirmesi */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Animasyonların eklendiği akıcı kapsayıcılar */
+        .container, .task-item, input, select, button, .template-card, .info-note, .edit-box, .confirm-box, .info-box {
+            transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
         }
 
         .container {
@@ -189,341 +146,399 @@
             margin: 0 auto;
             background: var(--bg-card);
             border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
             overflow: hidden;
-            transition: background 0.2s;
         }
 
         .inner {
-            padding: 2rem 1.8rem;
+            padding: 2.5rem 2rem;
+        }
+        
+        @media (max-width: 640px) {
+            body { padding: 1.5rem 1rem; }
+            .inner { padding: 1.8rem 1.2rem; }
         }
 
-        /* Başlık ve tema butonu */
+        /* Başlık ve kontroller */
         .title-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.2rem;
         }
+        
         .title {
-            font-size: 1.7rem;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 2rem;
             font-weight: 600;
-            letter-spacing: -0.3px;
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            color: var(--accent);
             display: flex;
             align-items: center;
             gap: 10px;
         }
+        
         .title i {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--accent);
-            background: none;
-            -webkit-background-clip: unset;
-            background-clip: unset;
+            font-style: normal;
         }
+        
         .right-controls {
             display: flex;
             gap: 8px;
             align-items: center;
             flex-wrap: wrap;
         }
+        
         .save-indicator {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
             background: var(--badge-bg);
-            padding: 0.4rem 1rem;
+            padding: 0.45rem 1rem;
             border-radius: 40px;
             color: var(--badge-text);
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
         .save-animate {
-            animation: badgePop 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            animation: badgePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             background: #10b981 !important;
             color: white !important;
         }
+        
         @keyframes badgePop {
             0% { transform: scale(1); background: var(--badge-bg); color: var(--badge-text);}
-            30% { transform: scale(1.08); background: #10b981; color: white; }
+            40% { transform: scale(1.1); background: #10b981; color: white; }
             100% { transform: scale(1); background: var(--badge-bg); color: var(--badge-text);}
         }
+        
         .theme-toggle {
             background: var(--badge-bg);
             border: 1px solid var(--border-light);
             border-radius: 3rem;
-            padding: 0.4rem 1rem;
+            padding: 0.45rem 1rem;
             cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-secondary);
-            transition: all 0.2s;
             display: flex;
             align-items: center;
             gap: 6px;
         }
+        
         .theme-toggle:hover {
             background: var(--border-light);
-        }
-
-        /* Arama kutusu */
-        .search-box {
-            margin-bottom: 1rem;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 0.6rem 1rem;
-            border-radius: 2rem;
-            border: 1px solid var(--border-light);
-            background: var(--search-bg);
             color: var(--text-primary);
-            font-size: 0.85rem;
-            outline: none;
-            transition: 0.15s;
+            transform: translateY(-1px);
         }
-        .search-box input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        .theme-toggle:active {
+            transform: translateY(0);
         }
 
         /* İlerleme alanı */
         .progress-area {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             background: var(--completed-bg);
-            padding: 1rem 1.2rem;
+            padding: 1.2rem 1.5rem;
             border-radius: 1.5rem;
+            border: 1px solid var(--border-light);
         }
+        
         .stats-row {
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 700;
             color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
+        
         .progress-bar-bg {
             background-color: var(--progress-bg);
             border-radius: 100px;
             height: 8px;
             overflow: hidden;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
         }
+        
         .progress-fill {
             width: 0%;
             height: 100%;
             border-radius: 100px;
-            transition: width 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), background-color 0.3s ease;
+            background-color: var(--accent);
+            transition: width 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), background-color 0.4s ease;
         }
+        
         .motivation-text {
-            font-size: 0.75rem;
-            margin-top: 0.4rem;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
             gap: 6px;
             min-height: 2.2rem;
+            font-weight: 500;
         }
+        
         .clear-all-btn {
-            margin-top: 0.8rem;
+            margin-top: 1rem;
             display: flex;
             justify-content: flex-end;
-            gap: 8px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
+        
         .btn-clear, .btn-export {
             background: var(--clear-btn-bg);
             border: 1px solid var(--border-light);
             border-radius: 2rem;
-            padding: 0.4rem 1rem;
-            font-size: 0.7rem;
-            font-weight: 500;
+            padding: 0.45rem 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
             color: var(--clear-btn-color);
             cursor: pointer;
-            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
+        
         .btn-clear:hover {
             background: var(--clear-btn-hover);
             color: var(--clear-btn-hover-color);
             border-color: var(--clear-btn-hover-color);
+            transform: translateY(-1px);
         }
+        
         .btn-export:hover {
             background: var(--border-hover);
             color: var(--accent);
+            transform: translateY(-1px);
         }
 
-        /* Görev ekleme formu */
-        .add-task-form {
-            display: flex;
-            gap: 10px;
-            margin: 0 0 1.8rem 0;
-        }
-        .add-task-form input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: 1px solid var(--border-light);
+        /* Arama ve Ekleme Kutu */
+        .search-box { margin-bottom: 1.2rem; }
+        
+        .search-box input, .add-task-form input {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 100%;
+            padding: 0.9rem 1.2rem;
             border-radius: 2rem;
-            font-size: 0.9rem;
+            border: 1px solid var(--border-light);
             background: var(--bg-card);
             color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
             outline: none;
-            transition: 0.15s;
+            box-shadow: var(--shadow-sm);
         }
-        .add-task-form input:focus {
+        
+        .search-box input::placeholder, .add-task-form input::placeholder {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        
+        .search-box input:focus, .add-task-form input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
         }
+        
+        .add-task-form {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .add-task-form input { flex: 1; }
+        
         .add-task-form button {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--accent);
             border: none;
             color: white;
-            padding: 0 1.2rem;
+            padding: 0 1.5rem;
             border-radius: 2rem;
-            font-weight: 500;
+            font-weight: 700;
             cursor: pointer;
-            transition: 0.1s;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-sm);
+            letter-spacing: 0.3px;
         }
+        
         .add-task-form button:hover {
             background: var(--accent-hover);
-            transform: scale(0.97);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px -2px rgba(234, 88, 12, 0.25);
         }
+        
+        .add-task-form button:active { transform: translateY(0); }
 
-        /* Accordion stilleri */
+        /* Accordion ve Görev Listesi */
         .accordion-section {
             margin: 1.5rem 0 1rem;
             border-bottom: 1px solid var(--border-light);
         }
+        
         .accordion-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            padding: 0.6rem 0;
+            padding: 0.8rem 0;
             user-select: none;
         }
+        
         .section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.9rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
+        
         .accordion-icon {
             font-size: 0.9rem;
-            transition: transform 0.2s;
             color: var(--text-secondary);
+            transition: transform 0.3s ease;
         }
+        
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+        
         .accordion-content.open {
-            max-height: 800px;
-            transition: max-height 0.4s ease-in;
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
         }
+        
         .task-list {
             display: flex;
             flex-direction: column;
-            gap: 0.65rem;
-            margin: 0.8rem 0 1.2rem;
+            gap: 0.75rem;
+            margin: 1rem 0 1.5rem;
+            min-height: 10px;
         }
+        
         .task-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: var(--bg-card);
             border: 1px solid var(--border-light);
-            padding: 0.7rem 1rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 1.2rem;
-            transition: all 0.15s;
             cursor: grab;
+            box-shadow: var(--shadow-sm);
+            touch-action: pan-y; /* Mobil kaydırma ve dokunmatik iyileştirmesi */
         }
-        .task-item:active {
-            cursor: grabbing;
-        }
+        
+        .task-item:active { cursor: grabbing; }
+        
         .task-item:hover {
             border-color: var(--border-hover);
             background: var(--task-hover);
+            transform: translateY(-1px);
         }
+        
+        .sortable-ghost {
+            opacity: 0.4;
+            background: var(--border-light);
+        }
+        .sortable-drag {
+            box-shadow: 0 15px 30px -5px rgba(0,0,0,0.15) !important;
+            cursor: grabbing !important;
+            transform: scale(1.02);
+        }
+        
         .task-left {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             flex: 1;
         }
+        
         .task-check {
-            width: 1.2rem;
-            height: 1.2rem;
+            width: 1.3rem;
+            height: 1.3rem;
             accent-color: var(--accent);
             cursor: pointer;
+            transition: transform 0.2s;
         }
+        .task-check:hover { transform: scale(1.1); }
+        
         .task-text {
             font-size: 0.95rem;
-            font-weight: 470;
+            font-weight: 500;
             color: var(--text-primary);
             word-break: break-word;
             flex: 1;
+            transition: color 0.3s;
         }
+        
         .task-text.completed {
             text-decoration: line-through;
             color: var(--completed-text);
+            font-style: italic;
         }
+        
         .task-actions {
             display: flex;
-            gap: 6px;
+            gap: 8px;
         }
+        
         .edit-task, .delete-task {
             background: transparent;
             border: none;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--delete-color);
-            transition: 0.1s;
-            padding: 4px 6px;
+            padding: 6px 8px;
             border-radius: 40px;
         }
-        .edit-task:hover {
-            color: var(--accent);
-            background: var(--delete-hover-bg);
-        }
-        .delete-task:hover {
-            color: var(--delete-hover);
-            background: var(--delete-hover-bg);
-        }
+        
+        .edit-task:hover { color: var(--accent); background: var(--icon-wrap-bg); }
+        .delete-task:hover { color: var(--delete-hover); background: var(--delete-hover-bg); }
 
-        /* Şablon ve Yedekleme bölümü */
+        /* Şablon ve Yedekleme */
         .template-section {
-            margin-top: 1.8rem;
-            padding-top: 1.2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--template-border);
         }
+        
         .template-header {
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             color: var(--text-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
+        
         .template-card {
             background: var(--completed-bg);
             border-radius: 1.2rem;
-            padding: 1rem;
+            padding: 1.2rem;
+            border: 1px solid var(--border-light);
         }
+        
         .template-row {
             display: flex;
             flex-wrap: wrap;
@@ -531,22 +546,25 @@
             gap: 12px;
             margin-bottom: 12px;
         }
-        .template-row:last-child {
-            margin-bottom: 0;
-        }
+        
+        .template-row:last-child { margin-bottom: 0; }
+        
         .template-label {
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 700;
             color: var(--text-secondary);
-            min-width: 60px;
+            min-width: 65px;
         }
+        
         .template-input-group {
             flex: 2;
             display: flex;
             gap: 8px;
             min-width: 180px;
         }
-        .template-input-group input, .template-select {
+        
+        .template-input-group input {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             flex: 2;
             padding: 0.6rem 1rem;
             border-radius: 2rem;
@@ -554,328 +572,367 @@
             background: var(--bg-card);
             color: var(--text-primary);
             font-size: 0.85rem;
+            font-weight: 500;
+            outline: none;
         }
+
+        /* Özel Revize Edilmiş Select Menüsü */
+        .template-select {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            flex: 2;
+            padding: 0.6rem 2.5rem 0.6rem 1.1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border-light);
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: var(--select-arrow);
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .template-input-group input:focus, .template-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+        }
+        
         .template-btn-group {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
         }
+        
         .template-btn {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--badge-bg);
             border: 1px solid var(--border-light);
             padding: 0.5rem 1rem;
             border-radius: 2rem;
-            font-weight: 500;
+            font-weight: 700;
             cursor: pointer;
             font-size: 0.8rem;
             color: var(--text-secondary);
-            transition: 0.1s;
         }
-        .template-btn:hover {
-            background: var(--border-hover);
-        }
+        
+        .template-btn:hover { background: var(--border-hover); color: var(--text-primary); }
+        
         .template-btn.full-width {
             flex: 1;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
+        
         .template-delete-btn {
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(239, 68, 68, 0.05);
             color: #ef4444;
             border-color: #ef4444;
         }
-        .template-delete-btn:hover {
-            background: #ef4444;
-            color: white;
-        }
+        
+        .template-delete-btn:hover { background: #ef4444; color: white; border-color: #ef4444; }
+        
         .small-note {
-            font-size: 0.7rem;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.8rem;
             color: var(--completed-text);
-            margin-top: 0.9rem;
+            margin-top: 1rem;
             text-align: center;
+            font-weight: 500;
         }
 
-        /* Bilgi Notları Bölümü */
+        /* Bilgi Notları Bölümü - Hizalaması Mükemmelleştirildi */
         .info-note {
             background: var(--info-bg);
             border-radius: 1.2rem;
             padding: 1.5rem;
-            margin-top: 1.8rem;
+            margin-top: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 14px;
             border-left: 4px solid var(--accent);
         }
+        
         .info-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center; /* Tam dikey merkezleme sağlandı */
             gap: 12px;
         }
+        
         .info-item .icon-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 34px;
+            height: 34px;
             background: var(--icon-wrap-bg);
             border-radius: 50%;
             color: var(--accent);
             flex-shrink: 0;
-            font-size: 0.85rem;
-            margin-top: 2px;
+            font-size: 0.9rem;
         }
+        
         .info-item p {
             margin: 0;
             font-size: 0.85rem;
-            line-height: 1.6;
+            line-height: 1.5;
             color: var(--info-text);
         }
 
-        /* Özel düzenleme modal'ı */
-        .edit-modal {
+        /* Modallar (Yumuşak Geçiş ve Sıçrama Efektli) */
+        .edit-modal, .custom-confirm, .info-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: var(--modal-overlay);
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 2000;
             visibility: hidden;
             opacity: 0;
-            transition: visibility 0.2s, opacity 0.2s;
+            transition: visibility 0.3s, opacity 0.3s;
         }
-        .edit-modal.active {
+        
+        .edit-modal.active, .custom-confirm.active, .info-modal.active {
             visibility: visible;
             opacity: 1;
         }
-        .edit-box {
+        
+        .edit-box, .confirm-box, .info-box {
             background: var(--modal-bg);
             border-radius: 1.5rem;
-            padding: 1.5rem;
-            max-width: 320px;
-            width: 85%;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            max-width: 360px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
             border: 1px solid var(--border-light);
+            transform: scale(0.95) translateY(10px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
         }
+        
+        .active .edit-box, .active .confirm-box, .active .info-box {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        
+        .edit-box, .confirm-box { padding: 2rem; }
+        
         .edit-box input {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             width: 100%;
-            padding: 0.6rem 1rem;
+            padding: 0.9rem 1.2rem;
             border-radius: 2rem;
             border: 1px solid var(--border-light);
             background: var(--bg-card);
             color: var(--text-primary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
             outline: none;
         }
-        .edit-box input:focus {
-            border-color: var(--accent);
-        }
-        .edit-buttons {
+        .edit-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15); }
+        
+        .edit-buttons, .confirm-buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             justify-content: flex-end;
         }
-        .edit-buttons button {
-            padding: 0.4rem 1rem;
+        
+        .edit-buttons button, .confirm-buttons button {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 0.6rem 1.5rem;
             border-radius: 2rem;
             border: none;
             cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 700;
         }
-        .edit-cancel {
+        
+        .edit-cancel, .confirm-cancel {
             background: var(--badge-bg);
             color: var(--text-secondary);
             border: 1px solid var(--border-light);
         }
-        .edit-save {
+        .edit-cancel:hover, .confirm-cancel:hover { background: var(--border-hover); }
+        
+        .edit-save, .confirm-ok {
             background: var(--accent);
             color: white;
         }
-
-        /* Özel onay modalı */
-        .custom-confirm {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--modal-overlay);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.2s, opacity 0.2s;
-        }
-        .custom-confirm.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        .confirm-box {
-            background: var(--modal-bg);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            max-width: 320px;
-            width: 85%;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
-            border: 1px solid var(--border-light);
-        }
+        .edit-save:hover, .confirm-ok:hover { background: var(--accent-hover); }
+        
         .confirm-box p {
-            margin-bottom: 1.2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-primary);
         }
+        
         .confirm-checkbox {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 1.2rem;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-        .confirm-buttons {
-            display: flex;
             gap: 10px;
-            justify-content: flex-end;
-        }
-        .confirm-buttons button {
-            padding: 0.4rem 1rem;
-            border-radius: 2rem;
-            border: none;
-            cursor: pointer;
-            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
             font-weight: 500;
-        }
-        .confirm-cancel {
-            background: var(--badge-bg);
             color: var(--text-secondary);
-            border: 1px solid var(--border-light);
+            cursor: pointer;
         }
-        .confirm-ok {
-            background: var(--accent);
-            color: white;
-        }
+        .confirm-checkbox input { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; }
 
-        /* Bilgi & Sosyal Medya Modalları */
-        .info-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--modal-overlay);
-            backdrop-filter: blur(4px);
+        /* Bilgi, Sosyal Medya & Yer İmi Kutuları */
+        .info-box { 
+            padding: 2.2rem 2rem 2rem; 
+            max-width: 420px; 
+            position: relative; 
+        }
+        .info-box h3 {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .help-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .help-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .help-icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.2s, opacity 0.2s;
-        }
-        .info-modal.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        .info-box {
-            background: var(--modal-bg);
-            border-radius: 1.5rem;
-            padding: 2rem 1.5rem 1.5rem; 
-            max-width: 380px;
-            width: 85%;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
-            border: 1px solid var(--border-light);
-            position: relative;
-        }
-        .info-box h3 {
-            margin-bottom: 1.2rem;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .info-box h3 i {
+            width: 36px;
+            height: 36px;
+            background: var(--icon-wrap-bg);
             color: var(--accent);
+            border-radius: 10px;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
-        .info-box p {
+        .help-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .help-text strong {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .help-text p {
             font-size: 0.85rem;
-            margin-bottom: 0.8rem;
+            margin: 0;
             line-height: 1.5;
             color: var(--text-secondary);
         }
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+        
+        .social-links { display: flex; flex-direction: column; gap: 12px; }
+        
         .social-link-btn {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             background: var(--bg-body);
-            padding: 0.8rem 1rem;
+            padding: 1rem 1.2rem;
             border-radius: 1rem;
             text-decoration: none;
             color: var(--text-primary);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: 0.2s;
+            font-weight: 700;
+            font-size: 0.95rem;
             border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
         }
+        
         .social-link-btn:hover {
             border-color: var(--accent);
             background: var(--icon-wrap-bg);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
+        
         .social-link-btn i {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--accent);
-            width: 20px;
+            width: 24px;
             text-align: center;
         }
+        
         .close-modal-btn {
             position: absolute;
-            top: 1rem;
+            top: 1.2rem;
             right: 1.2rem;
-            background: transparent;
-            border: none;
-            font-size: 1.2rem;
+            background: var(--badge-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
             color: var(--text-secondary);
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.3s ease;
         }
+        
         .close-modal-btn:hover {
             color: var(--delete-hover);
+            background: var(--delete-hover-bg);
+            border-color: var(--delete-hover-bg);
+            transform: rotate(90deg);
+        }
+
+        .bookmark-badge {
+            background: var(--bg-body);
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            border: 1px dashed var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 1.2rem 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
         }
     </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"></link>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
+<h1 style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">Yapılacaklar Listesi Uygulaması: Profesyonel Görev Takibi</h1>
+
 <div class="container">
     <div class="inner">
         <div class="title-bar">
-            <span class="title"><i class="fas fa-clipboard-list"></i> Yapılacaklar Listesi</span>
+            <span class="title"><i class="fas fa-clipboard-check"></i> Yapılacaklar Listesi</span>
             <div class="right-controls">
-                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?" style="padding: 0.4rem 0.7rem;"><i class="fas fa-question"></i></button>
-                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya" style="padding: 0.4rem 0.7rem;"><i class="fas fa-link"></i></button>
-                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle" style="padding: 0.4rem 0.7rem;"><i class="fas fa-bookmark"></i></button>
+                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?" style="padding: 0.45rem 0.8rem;"><i class="fas fa-circle-question"></i></button>
+                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya" style="padding: 0.45rem 0.8rem;"><i class="fas fa-arrow-up-right-from-square"></i></button>
+                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle" style="padding: 0.45rem 0.8rem;"><i class="fas fa-bookmark"></i></button>
                 <span class="save-indicator" id="saveIndicator"><i class="fas fa-database"></i> <span>Kaydedildi</span></span>
                 <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> Gece</button>
             </div>
@@ -918,6 +975,7 @@
                 <div class="small-note">⚡ Mevcut görevlerinizi şablon olarak kaydedin. Yüklemek mevcutları siler.</div>
             </div>
         </div>
+        
         <div class="template-section">
             <div class="template-header"><i class="fas fa-archive"></i> Veri Yedekleme</div>
             <div class="template-card"><div class="template-row"><div class="template-btn-group" style="width: 100%;"><button class="template-btn full-width" id="exportDataBtn"><i class="fas fa-download"></i> JSON Yedek İndir</button><button class="template-btn full-width" id="importDataBtn"><i class="fas fa-upload"></i> JSON Yedek Yükle</button><input accept=".json" id="importFileInput" style="display: none;" type="file" /></div></div><div class="small-note">Tüm görev ve şablonlarınızı dışa/içe aktarın.</div></div>
@@ -930,10 +988,10 @@
             </div>
             <div class="info-item">
                 <span class="icon-wrap"><i class="fas fa-keyboard"></i></span>
-                <p>Kısayollar: <strong>Ctrl+N / Alt+N</strong> (yeni görev), <strong>Ctrl+E</strong> (düzenle), <strong>Ctrl+F</strong> (arama), <strong>Ctrl+S</strong> (CSV dışa aktar).</p>
+                <p>Kısayollar: <strong>Ctrl+N / Alt+N</strong> (yeni görev), <strong>Ctrl+E</strong> (düzenle), <strong>Ctrl+F</strong> (arama), <strong>Ctrl+S</strong> (CSV dışa aktar), <strong>Ctrl+D</strong> (Tema Değiştir), <strong>Ctrl+P</strong> (PDF İndir), <strong>ESC</strong> (Modal Kapat).</p>
             </div>
             <div class="info-item">
-                <span class="icon-wrap"><i class="fas fa-edit"></i></span>
+                <span class="icon-wrap"><i class="fas fa-hand-pointer"></i></span>
                 <p>Görevleri düzenlemek için ✏️, silmek için 🗑️ butonlarını kullanın. Sürükle-bırak ile dilediğiniz gibi sıralayabilirsiniz.</p>
             </div>
         </div>
@@ -964,24 +1022,47 @@
     </div>
 </div>
 
-<!-- Nasıl Kullanılır Modalı -->
 <div class="info-modal" id="helpModal">
     <div class="info-box">
         <button class="close-modal-btn" id="closeHelpBtn"><i class="fas fa-times"></i></button>
-        <h3><i class="fas fa-question-circle"></i> Nasıl Kullanılır?</h3>
-        <p><strong>Görev Ekleme:</strong> Alt kısımdaki kutuya görevinizi yazıp 'Ekle' butonuna basın veya Enter tuşunu kullanın.</p>
-        <p><strong>Düzenleme & Silme:</strong> Görevlerin sağındaki ✏️ butonu ile düzenleyebilir, 🗑️ butonu ile silebilirsiniz.</p>
-        <p><strong>Sıralama:</strong> Görevleri sürükle-bırak yöntemiyle dilediğiniz gibi sıralayabilirsiniz.</p>
-        <p><strong>Şablonlar:</strong> Tekrar eden görevlerinizi "Şablon" olarak kaydedip, tek tıkla geri yükleyebilirsiniz.</p>
-        <p><strong>Kısayollar:</strong> Ctrl+N (Yeni Görev), Ctrl+E (Düzenle), Ctrl+F (Arama), Ctrl+S (CSV İndir).</p>
+        <h3><i class="fas fa-book-open"></i> Kullanım Rehberi</h3>
+        <div class="help-grid">
+            <div class="help-item">
+                <span class="help-icon"><i class="fas fa-plus"></i></span>
+                <div class="help-text">
+                    <strong>Hızlı Görev Ekleme</strong>
+                    <p>Alt alana görevinizi yazıp <em>Enter</em> tuşuna basarak hızlıca listeye dâhil edebilirsiniz.</p>
+                </div>
+            </div>
+            <div class="help-item">
+                <span class="help-icon"><i class="fas fa-arrows-alt-v"></i></span>
+                <div class="help-text">
+                    <strong>Sürükle & Sırala</strong>
+                    <p>Görevleri tutup sürükleyerek (drag & drop) öncelik sırasını dilediğiniz gibi ayarlayabilirsiniz.</p>
+                </div>
+            </div>
+            <div class="help-item">
+                <span class="help-icon"><i class="fas fa-layer-group"></i></span>
+                <div class="help-text">
+                    <strong>Şablon Oluşturma</strong>
+                    <p>Tekrar eden rutinlerinizi şablon olarak kaydedip, tek tıkla yeni bir güne taşıyabilirsiniz.</p>
+                </div>
+            </div>
+            <div class="help-item">
+                <span class="help-icon"><i class="fas fa-keyboard"></i></span>
+                <div class="help-text">
+                    <strong>Akıllı Kısayollar</strong>
+                    <p>Ctrl+N (Yeni), Ctrl+E (Düzenle), Ctrl+F (Ara), Ctrl+S (CSV), Ctrl+P (PDF), Ctrl+D (Tema), ESC (Kapat) tuşlarıyla hızlanın.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Uygulamalar & Sosyal Medya Modalı -->
 <div class="info-modal" id="socialModal">
     <div class="info-box">
         <button class="close-modal-btn" id="closeSocialBtn"><i class="fas fa-times"></i></button>
-        <h3><i class="fas fa-layer-group"></i> Uygulamalar & Sosyal Medya</h3>
+        <h3><i class="fas fa-arrow-up-right-from-square"></i> Bağlantılar</h3>
         <div class="social-links">
             <a href="https://github.com/ufukdemiir" target="_blank" class="social-link-btn">
                 <i class="fab fa-github"></i> GitHub
@@ -999,16 +1080,34 @@
     </div>
 </div>
 
+<div class="info-modal" id="bookmarkModal">
+    <div class="info-box">
+        <button class="close-modal-btn" id="closeBookmarkBtn"><i class="fas fa-times"></i></button>
+        <h3><i class="fas fa-bookmark"></i> Yer İmlerine Ekle</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            Uygulamaya her an kolayca ulaşmak için tarayıcınızın yer imlerine ekleyebilirsiniz.
+        </p>
+        <div class="bookmark-badge">
+            <i class="fas fa-keyboard"></i> <span id="bookmarkShortcutText">Ctrl + D</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center;">
+            Klavyenizden yukarıdaki tuş kombinasyonuna basarak bu sayfayı hemen favorilerinize kaydedebilirsiniz.
+        </p>
+    </div>
+</div>
+
 <script>
     let tasks = [], templates = {};
     let activeOpen = true, completedOpen = true;
     let sortableActive = null, sortableCompleted = null;
     let filterText = '';
     let currentEditTaskId = null;
-
-    // Modal callback yönetimi
     let pendingConfirmAction = null;
     let pendingConfirmSkipKey = null;
+
+    // Motivasyon Mesajı Durumu (Yazı yazarken rastgele değişmesini önlemek için)
+    let currentMotivationStateKey = "";
+    let currentMotivationText = "";
 
     // DOM
     const activeContainer = document.getElementById('activeTasksList');
@@ -1043,25 +1142,24 @@
     const editCancelBtn = document.getElementById('editCancelBtn');
     const editSaveBtn = document.getElementById('editSaveBtn');
     
-    // Yeni Eklenen Modallar ve Butonlar
     const helpBtn = document.getElementById('helpBtn');
     const socialBtn = document.getElementById('socialBtn');
     const bookmarkBtn = document.getElementById('bookmarkBtn');
     const helpModal = document.getElementById('helpModal');
     const socialModal = document.getElementById('socialModal');
+    const bookmarkModal = document.getElementById('bookmarkModal');
     const closeHelpBtn = document.getElementById('closeHelpBtn');
     const closeSocialBtn = document.getElementById('closeSocialBtn');
+    const closeBookmarkBtn = document.getElementById('closeBookmarkBtn');
+    const bookmarkShortcutText = document.getElementById('bookmarkShortcutText');
 
     // Helper: Skip kontrolü
     function getSkipFlag(key) { return localStorage.getItem(`skip_${key}`) === 'true'; }
     function setSkipFlag(key, val) { if(val) localStorage.setItem(`skip_${key}`, 'true'); else localStorage.removeItem(`skip_${key}`); }
 
-    // Modal göster
+    // Modallar
     function showConfirm(message, skipKey, onConfirm) {
-        if (skipKey && getSkipFlag(skipKey)) {
-            onConfirm();
-            return;
-        }
+        if (skipKey && getSkipFlag(skipKey)) { onConfirm(); return; }
         confirmMessage.innerText = message;
         confirmDontAsk.checked = false;
         pendingConfirmAction = onConfirm;
@@ -1070,7 +1168,6 @@
     }
     function hideModal() { modal.classList.remove('active'); pendingConfirmAction = null; }
 
-    // Düzenleme Modal
     function showEditModal(taskId, currentText) {
         currentEditTaskId = taskId;
         editTaskInput.value = currentText;
@@ -1082,76 +1179,25 @@
         const newText = editTaskInput.value.trim();
         if (newText && currentEditTaskId) {
             const task = tasks.find(t => String(t.id) === String(currentEditTaskId));
-            if (task) {
-                task.text = newText;
-                persistToLocal();
-                renderTasks();
-            }
+            if (task) { task.text = newText; persistToLocal(); renderTasks(); }
         }
         hideEditModal();
     }
 
-    // Renk ve animasyon
-    function getRandomProgressColor() { return `hsl(${Math.floor(Math.random()*360)}, ${65+Math.floor(Math.random()*30)}%, ${55+Math.floor(Math.random()*20)}%)`; }
-    function triggerSaveAnimation() { saveIndicator.classList.add('save-animate'); setTimeout(()=>saveIndicator.classList.remove('save-animate'),400); }
+    // Renk, Animasyon, Kayıt
+    function triggerSaveAnimation() { saveIndicator.classList.add('save-animate'); setTimeout(()=>saveIndicator.classList.remove('save-animate'),500); }
     function persistToLocal() { localStorage.setItem('yapilistem_tasks', JSON.stringify(tasks)); localStorage.setItem('yapilistem_templates', JSON.stringify(templates)); triggerSaveAnimation(); }
 
-    // Çeşitli ve motive edici mesaj havuzu
     const motivationMessages = {
-        zero: [
-            "✨ Henüz görev yok, ilkini ekle!",
-            "📝 Yeni bir güne yeni görevlerle başlayın.",
-            "🚀 İlk görevini ekleyerek başarıya ilk adımı at!",
-            "💪 Bugün için plan yapmaya ne dersin?",
-            "🎯 Hedeflerini listelemek için harika bir zaman."
-        ],
-        noCompleted: (total) => [
-            `📌 Henüz tamamlanmış görev yok (${total} görev var). İlkini tamamlamaya ne dersin?`,
-            `🎯 ${total} görev bekliyor! Hadi bir tanesini bitirerek başla.`,
-            `💪 ${total} görev seni bekliyor. İlk adımı at, bir görevi tamamla!`,
-            `🚀 ${total} görev var ve hiçbiri tamamlanmamış. Şimdi başlama zamanı!`,
-            `🌟 ${total} görev arasından birini seç ve tamamla. Başarı seninle!`,
-            `⚡ ${total} görev henüz tamamlanmadı. Hadi ilerlemeye başla!`
-        ],
-        early: (completed, total) => [
-            `🚀 Harika başlangıç! ${completed}/${total} tamamlandı.`,
-            `💪 Devam et, ${completed}/${total} görevi bitirdin!`,
-            `🌟 İlk adımlar atıldı, ${completed}/${total} tamam!`,
-            `📈 İyi gidiyorsun, ${completed}/${total} tamamlandı.`,
-            `🎯 Hedefine yaklaşıyorsun, ${completed}/${total} bitti!`,
-            `⚡ Enerjin yüksek, ${completed}/${total} görevi tamamladın!`,
-            `🏆 Bu tempoyla devam, ${completed}/${total} başardın!`
-        ],
-        mid: (percent, completed, total) => [
-            `⚡ Süper gidiyorsun! %${percent} tamamlandı.`,
-            `🎉 Harika ilerleme! %${percent} tamamlandı (${completed}/${total}).`,
-            `💪 Motivasyonun yüksek, %${percent} bitirdin!`,
-            `🌟 Yolun büyük bir kısmını geçtin, %${percent} tamam!`,
-            `📈 İlerleme harikan, %${percent} tamamlandı.`,
-            `🚀 Az kaldı, %${percent} bitirdin!`,
-            `🏆 Bu gidişle hedefe ulaşacaksın, %${percent} tamam!`
-        ],
-        high: (percent, completed, total) => [
-            `🎯 Neredeyse bitti! %${percent} tamamlandı.`,
-            `⚡ Son düzlük! %${percent} tamamlandı, devam et!`,
-            `🌟 Harika iş çıkarıyorsun, %${percent} bitti!`,
-            `🏆 Çok az kaldı, %${percent} tamamlandı.`,
-            `💪 Finale ramak kaldı, %${percent} başardın!`,
-            `🚀 Muhteşem ilerleme! %${percent} tamamlandı.`
-        ],
-        complete: [
-            "🎉 Harika! Tüm görevler tamamlandı. Tebrikler!",
-            "🏆 Mükemmel iş çıkardın! Tüm görevler bitti.",
-            "🌟 Başardın! Bugünlük tüm hedeflerine ulaştın.",
-            "💪 İnanılmazsın! Tüm görevleri tamamladın.",
-            "🎯 Hedeflerini başardın, harikasın!",
-            "⚡ Süper bir gün geçirdin, tüm görevler tamam."
-        ]
+        zero: ["✨ Henüz görev yok, ilkini ekle!", "📝 Yeni bir güne yeni görevlerle başlayın.", "🚀 İlk görevini ekleyerek başarıya ilk adımı at!", "💪 Bugün için plan yapmaya ne dersin?", "🎯 Hedeflerini listelemek için harika bir zaman."],
+        noCompleted: (total) => [`📌 Henüz tamamlanmış görev yok (${total} görev var). İlkini tamamlamaya ne dersin?`, `🎯 ${total} görev bekliyor! Hadi bir tanesini bitirerek başla.`, `💪 ${total} görev seni bekliyor. İlk adımı at!`],
+        early: (completed, total) => [`🚀 Harika başlangıç! ${completed}/${total} tamamlandı.`, `💪 Devam et, ${completed}/${total} görevi bitirdin!`, `🌟 İlk adımlar atıldı, ${completed}/${total} tamam!`],
+        mid: (percent, completed, total) => [`⚡ Süper gidiyorsun! %${percent} tamamlandı.`, `🎉 Harika ilerleme! %${percent} tamamlandı (${completed}/${total}).`, `💪 Motivasyonun yüksek, %${percent} bitirdin!`],
+        high: (percent, completed, total) => [`🎯 Neredeyse bitti! %${percent} tamamlandı.`, `⚡ Son düzlük! %${percent} tamamlandı, devam et!`, `🌟 Harika iş çıkarıyorsun, %${percent} bitti!`],
+        complete: ["🎉 Harika! Tüm görevler tamamlandı. Tebrikler!", "🏆 Mükemmel iş çıkardın! Tüm görevler bitti.", "🌟 Başardın! Bugünlük tüm hedeflerine ulaştın."]
     };
 
-    function getRandomMessage(messageArray) {
-        return messageArray[Math.floor(Math.random() * messageArray.length)];
-    }
+    function getRandomMessage(messageArray) { return messageArray[Math.floor(Math.random() * messageArray.length)]; }
 
     function updateProgressAndMotivation() {
         const total = tasks.length;
@@ -1159,47 +1205,64 @@
         const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
         
         progressFill.style.width = `${percent}%`;
-        progressFill.style.backgroundColor = getRandomProgressColor();
         completedSpan.innerText = `${completed} tamamlandı`;
         totalSpan.innerText = `${total} görev`;
 
-        let message = "";
-        if (total === 0) {
-            message = getRandomMessage(motivationMessages.zero);
-        } else if (completed === total) {
-            message = getRandomMessage(motivationMessages.complete);
-        } else if (completed === 0) {
-            // Hiç tamamlanmış görev yok, total > 0
-            message = getRandomMessage(motivationMessages.noCompleted(total));
-        } else if (percent < 30) {
-            message = getRandomMessage(motivationMessages.early(completed, total));
-        } else if (percent >= 30 && percent < 70) {
-            message = getRandomMessage(motivationMessages.mid(percent, completed, total));
-        } else if (percent >= 70 && percent < 100) {
-            message = getRandomMessage(motivationMessages.high(percent, completed, total));
-        } else {
-            message = `📌 ${completed}/${total} tamamlandı, yoluna devam et!`;
+        const newStateKey = `${total}-${completed}`;
+        
+        if (newStateKey !== currentMotivationStateKey || !currentMotivationText) {
+            currentMotivationStateKey = newStateKey;
+            if (total === 0) currentMotivationText = getRandomMessage(motivationMessages.zero);
+            else if (completed === total) currentMotivationText = getRandomMessage(motivationMessages.complete);
+            else if (completed === 0) currentMotivationText = getRandomMessage(motivationMessages.noCompleted(total));
+            else if (percent < 30) currentMotivationText = getRandomMessage(motivationMessages.early(completed, total));
+            else if (percent >= 30 && percent < 70) currentMotivationText = getRandomMessage(motivationMessages.mid(percent, completed, total));
+            else if (percent >= 70 && percent < 100) currentMotivationText = getRandomMessage(motivationMessages.high(percent, completed, total));
+            else currentMotivationText = `📌 ${completed}/${total} tamamlandı, yoluna devam et!`;
         }
         
-        motivationMsgSpan.innerHTML = message;
+        motivationMsgSpan.innerHTML = currentMotivationText;
     }
 
-    // Görev render
+    // Görev Render ve Mobil Uyumlu SortableJS Yapılandırması
     function renderTasks() {
         const filtered = tasks.filter(t => t.text.toLowerCase().includes(filterText.toLowerCase()));
         const activeTasks = filtered.filter(t => !t.completed);
         const completedTasks = filtered.filter(t => t.completed);
+        
         activeContainer.innerHTML = '';
-        if (activeTasks.length===0) activeContainer.innerHTML = `<div style="text-align:center; padding:1rem; color:var(--completed-text)"><i class="fas fa-check-double"></i> Gösterilecek aktif görev yok</div>`;
+        if (activeTasks.length===0) activeContainer.innerHTML = `<div style="text-align:center; padding:1.2rem; color:var(--completed-text); font-size:0.95rem; font-style:italic;"><i class="fas fa-check-double"></i> Gösterilecek aktif görev yok</div>`;
         else activeTasks.forEach(task => activeContainer.appendChild(createTaskElement(task)));
+        
         completedContainer.innerHTML = '';
-        if (completedTasks.length===0) completedContainer.innerHTML = `<div style="text-align:center; padding:1rem; color:var(--completed-text)"><i class="fas fa-inbox"></i> Tamamlanan görev yok</div>`;
+        if (completedTasks.length===0) completedContainer.innerHTML = `<div style="text-align:center; padding:1.2rem; color:var(--completed-text); font-size:0.95rem; font-style:italic;"><i class="fas fa-inbox"></i> Tamamlanan görev yok</div>`;
         else completedTasks.forEach(task => completedContainer.appendChild(createTaskElement(task)));
+        
         updateProgressAndMotivation();
+        
         if (sortableActive) sortableActive.destroy();
         if (sortableCompleted) sortableCompleted.destroy();
-        sortableActive = new Sortable(activeContainer, { animation: 150, onEnd: () => reorderTasks('active') });
-        sortableCompleted = new Sortable(completedContainer, { animation: 150, onEnd: () => reorderTasks('completed') });
+        
+        // Mobil uyumluluk, gecikme (delay) ve hassasiyet ayarları ile güçlendirilmiş SortableJS tanımları
+        const sortableOptions = {
+            animation: 200,
+            ghostClass: 'sortable-ghost',
+            dragClass: 'sortable-drag',
+            delay: 150, // Mobilde yanlışlıkla kaydırmaları önlemek için küçük gecikme
+            delayOnTouchOnly: true, // Sadece dokunmatik cihazlarda gecikme uygular
+            touchStartThreshold: 5,
+            forceFallback: false
+        };
+
+        sortableActive = new Sortable(activeContainer, {
+            ...sortableOptions,
+            onEnd: () => reorderTasks('active')
+        });
+
+        sortableCompleted = new Sortable(completedContainer, {
+            ...sortableOptions,
+            onEnd: () => reorderTasks('completed')
+        });
     }
     
     function reorderTasks(type) {
@@ -1214,7 +1277,6 @@
         }
         
         const remaining = tasks.filter(t => !newOrderIds.includes(String(t.id)));
-        
         tasks = [...newOrder, ...remaining];
         persistToLocal();
         renderTasks();
@@ -1223,104 +1285,77 @@
     function createTaskElement(task) {
         const div = document.createElement('div'); div.className = 'task-item'; div.setAttribute('data-id', task.id);
         const leftDiv = document.createElement('div'); leftDiv.className = 'task-left';
+        
         const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.className = 'task-check'; checkbox.checked = task.completed;
         checkbox.addEventListener('change', () => { task.completed = checkbox.checked; persistToLocal(); renderTasks(); });
+        
         const textSpan = document.createElement('span'); textSpan.className = `task-text ${task.completed ? 'completed' : ''}`; textSpan.innerText = task.text;
+        
         const actions = document.createElement('div'); actions.className = 'task-actions';
         const editBtn = document.createElement('button'); editBtn.className = 'edit-task'; editBtn.innerHTML = '<i class="fas fa-edit"></i>'; editBtn.title = 'Düzenle';
         editBtn.addEventListener('click', (e) => { e.stopPropagation(); showEditModal(task.id, task.text); });
+        
         const delBtn = document.createElement('button'); delBtn.className = 'delete-task'; delBtn.innerHTML = '<i class="fas fa-times"></i>'; delBtn.title = 'Sil';
         delBtn.addEventListener('click', (e) => { e.stopPropagation(); tasks = tasks.filter(t => String(t.id) !== String(task.id)); persistToLocal(); renderTasks(); });
+        
         actions.appendChild(editBtn); actions.appendChild(delBtn);
         leftDiv.appendChild(checkbox); leftDiv.appendChild(textSpan); div.appendChild(leftDiv); div.appendChild(actions);
         return div;
     }
     
-    function addNewTask() { const text = newTaskInput.value.trim(); if(!text) return alert("Bir görev yazın"); tasks.push({ id: Date.now()+Math.random().toString(36).substring(2,6), text: text, completed: false }); newTaskInput.value=""; persistToLocal(); renderTasks(); newTaskInput.focus(); }
+    function addNewTask() { 
+        const text = newTaskInput.value.trim(); 
+        if(!text) return alert("Bir görev yazın"); 
+        tasks.push({ id: Date.now()+Math.random().toString(36).substring(2,6), text: text, completed: false }); 
+        newTaskInput.value=""; persistToLocal(); renderTasks(); newTaskInput.focus(); 
+    }
 
-    // Tümünü Temizle
     function performClearAll() { if(tasks.length===0) return alert("Zaten boş"); tasks=[]; persistToLocal(); renderTasks(); alert("Tüm görevler temizlendi."); }
     function confirmClearAll() { showConfirm("Tüm görevler kalıcı olarak silinecek. Devam etmek istediğinize emin misiniz?", "clearAll", performClearAll); }
 
-    // Şablon işlemleri
+    // Şablon İşlemleri
     function refreshTemplateSelect() { templateSelect.innerHTML='<option value="">— şablon seç —</option>'; const names=Object.keys(templates); if(names.length===0) templateSelect.innerHTML+='<option disabled>Kayıtlı şablon yok</option>'; else names.forEach(n=>{const opt=document.createElement('option'); opt.value=n; opt.textContent=n; templateSelect.appendChild(opt);}); }
     function saveCurrentAsTemplate() { const name=templateNameInput.value.trim(); if(!name) return alert("Şablon adı girin"); if(tasks.length===0) return alert("Kaydedilecek görev yok"); templates[name]=tasks.map(t=>t.text); persistToLocal(); refreshTemplateSelect(); templateNameInput.value=""; alert(`"${name}" kaydedildi`); }
-    
-    function performLoadTemplate() {
-        const name = templateSelect.value.trim();
-        if (!name) { alert("Lütfen bir şablon seçin."); return; }
-        const tmpl = templates[name];
-        if (!tmpl || !tmpl.length) { alert("Seçili şablon boş veya bulunamadı."); return; }
-        tasks = tmpl.map((text, idx) => ({ id: Date.now() + idx + Math.random().toString(36).substring(2, 6), text: text, completed: false }));
-        persistToLocal(); renderTasks(); alert(`"${name}" yüklendi, ${tasks.length} görev hazır`);
-    }
-    
-    function confirmLoadTemplate() {
-        const name = templateSelect.value;
-        if(!name) { alert("Şablon seçin"); return; }
-        const tmpl = templates[name];
-        if(!tmpl||!tmpl.length) { alert("Şablon boş"); return; }
-        showConfirm(`"${name}" şablonu yüklenecek. Mevcut tüm görevleriniz silinecek, devam etmek istiyor musunuz?`, "loadTemplate", performLoadTemplate);
-    }
-    
-    function performDeleteTemplate() {
-        const name = templateSelect.value;
-        if(!name) { alert("Şablon seçin"); return; }
-        delete templates[name];
-        persistToLocal(); refreshTemplateSelect(); templateSelect.value="";
-        alert(`"${name}" silindi`);
-    }
-    function confirmDeleteTemplate() {
-        const name = templateSelect.value;
-        if(!name) { alert("Şablon seçin"); return; }
-        showConfirm(`"${name}" şablonunu kalıcı olarak silmek istediğinize emin misiniz?`, "deleteTemplate", performDeleteTemplate);
-    }
+    function performLoadTemplate() { const name = templateSelect.value.trim(); if (!name) return alert("Lütfen bir şablon seçin."); const tmpl = templates[name]; if (!tmpl || !tmpl.length) return alert("Seçili şablon boş veya bulunamadı."); tasks = tmpl.map((text, idx) => ({ id: Date.now() + idx + Math.random().toString(36).substring(2, 6), text: text, completed: false })); persistToLocal(); renderTasks(); alert(`"${name}" yüklendi, ${tasks.length} görev hazır`); }
+    function confirmLoadTemplate() { const name = templateSelect.value; if(!name) return alert("Şablon seçin"); const tmpl = templates[name]; if(!tmpl||!tmpl.length) return alert("Şablon boş"); showConfirm(`"${name}" şablonu yüklenecek. Mevcut tüm görevleriniz silinecek, devam etmek istiyor musunuz?`, "loadTemplate", performLoadTemplate); }
+    function performDeleteTemplate() { const name = templateSelect.value; if(!name) return alert("Şablon seçin"); delete templates[name]; persistToLocal(); refreshTemplateSelect(); templateSelect.value=""; alert(`"${name}" silindi`); }
+    function confirmDeleteTemplate() { const name = templateSelect.value; if(!name) return alert("Şablon seçin"); showConfirm(`"${name}" şablonunu kalıcı olarak silmek istediğinize emin misiniz?`, "deleteTemplate", performDeleteTemplate); }
 
-    // Yedekleme ve dışa aktarma
+    // Veri İndirme/Yükleme
     function exportJSON() { const blob=new Blob([JSON.stringify({tasks,templates},null,2)],{type:"application/json"}); saveAs(blob,`yapilacaklar_yedek_${new Date().toISOString().split('T')[0]}.json`); alert("JSON yedeği indirildi"); }
     function importJSON(file) { const reader=new FileReader(); reader.onload=e=>{ try{ const data=JSON.parse(e.target.result); if(data.tasks!==undefined) tasks=data.tasks; if(data.templates!==undefined) templates=data.templates; persistToLocal(); renderTasks(); refreshTemplateSelect(); alert("Yedek başarıyla yüklendi"); } catch(err){ alert("Geçersiz dosya"); } importFileInput.value=""; }; reader.readAsText(file); }
     function exportCSV() { let csv="\"Görev\",\"Durum\"\n"; tasks.forEach(t=>{ csv+=`"${t.text.replace(/"/g,'""')}",${t.completed?"Tamamlandı":"Devam Ediyor"}\n`; }); const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}); saveAs(blob,`gorevler_${new Date().toISOString().split('T')[0]}.csv`); alert("CSV indirildi"); }
     
-    // PDF (pdfMake ile vektörel ve seçilebilir)
     function exportPDF() {
-        const tableBody = [
-            [{ text: '#', style: 'tableHeader' }, { text: 'Görev', style: 'tableHeader' }, { text: 'Durum', style: 'tableHeader' }]
-        ];
-        tasks.forEach((t, i) => {
-            tableBody.push([
-                { text: (i + 1).toString(), alignment: 'center', margin: [0, 5, 0, 5] },
-                { text: t.text, margin: [0, 5, 0, 5] },
-                { text: t.completed ? 'Tamamlandı' : 'Devam Ediyor', color: t.completed ? '#10b981' : '#f59e0b', bold: true, margin: [0, 5, 0, 5] }
-            ]);
-        });
+        const tableBody = [ [{ text: '#', style: 'tableHeader' }, { text: 'Görev', style: 'tableHeader' }, { text: 'Durum', style: 'tableHeader' }] ];
+        tasks.forEach((t, i) => { tableBody.push([ { text: (i + 1).toString(), alignment: 'center', margin: [0, 5, 0, 5] }, { text: t.text, margin: [0, 5, 0, 5] }, { text: t.completed ? 'Tamamlandı' : 'Devam Ediyor', color: t.completed ? '#10b981' : '#ea580c', bold: true, margin: [0, 5, 0, 5] } ]); });
         const docDefinition = {
             content: [
                 { text: 'Yapılacaklar Listesi', style: 'header' },
-                { style: 'tableExample', table: { headerRows: 1, widths: [30, '*', 120], body: tableBody }, layout: {
-                    fillColor: (rowIndex) => rowIndex === 0 ? '#2563eb' : (rowIndex % 2 === 0 ? '#f8fafc' : null),
-                    hLineWidth: () => 1, vLineWidth: () => 1,
-                    hLineColor: (i) => (i === 0 || i === 1) ? '#1d4ed8' : '#cbd5e1',
-                    vLineColor: () => '#cbd5e1'
-                } },
+                { style: 'tableExample', table: { headerRows: 1, widths: [30, '*', 120], body: tableBody }, layout: { fillColor: (rowIndex) => rowIndex === 0 ? '#ea580c' : (rowIndex % 2 === 0 ? '#fcf9f7' : null), hLineWidth: () => 1, vLineWidth: () => 1, hLineColor: (i) => (i === 0 || i === 1) ? '#c2410c' : '#dccac0', vLineColor: () => '#dccac0' } },
                 { text: `Oluşturulma Tarihi: ${new Date().toLocaleDateString('tr-TR')}`, style: 'footer' }
             ],
-            styles: {
-                header: { fontSize: 22, bold: true, color: '#2563eb', margin: [0, 0, 0, 20], alignment: 'center' },
-                tableHeader: { bold: true, fontSize: 13, color: 'white', alignment: 'center', margin: [0, 8, 0, 8] },
-                tableExample: { margin: [0, 5, 0, 15] },
-                footer: { fontSize: 10, color: '#64748b', alignment: 'right', margin: [0, 20, 0, 0] }
-            }
+            styles: { header: { fontSize: 22, bold: true, color: '#ea580c', margin: [0, 0, 0, 20], alignment: 'center' }, tableHeader: { bold: true, fontSize: 13, color: 'white', alignment: 'center', margin: [0, 8, 0, 8] }, tableExample: { margin: [0, 5, 0, 15] }, footer: { fontSize: 10, color: '#6b5c54', alignment: 'right', margin: [0, 20, 0, 0] } }
         };
         pdfMake.createPdf(docDefinition).download(`gorevler_${new Date().toISOString().split('T')[0]}.pdf`);
     }
 
-    // Tema
-    function initTheme() { const saved=localStorage.getItem('yapilistem_theme'); if(saved==='dark'){ document.body.classList.add('dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; }else{ document.body.classList.remove('dark'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; } }
-    function toggleTheme() { if(document.body.classList.contains('dark')){ document.body.classList.remove('dark'); localStorage.setItem('yapilistem_theme','light'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; }else{ document.body.classList.add('dark'); localStorage.setItem('yapilistem_theme','dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } }
+    // Tema Yönetimi
+    function initTheme() { 
+        const saved = localStorage.getItem('yapilistem_theme'); 
+        if(saved === 'dark') { document.body.classList.add('dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } 
+        else { document.body.classList.remove('dark'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; } 
+    }
+    function toggleTheme() { 
+        if(document.body.classList.contains('dark')) { document.body.classList.remove('dark'); localStorage.setItem('yapilistem_theme','light'); themeToggle.innerHTML='<i class="fas fa-moon"></i> Gece'; } 
+        else { document.body.classList.add('dark'); localStorage.setItem('yapilistem_theme','dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } 
+    }
+
+    // Accordion Yapısı
     function setupAccordion() {
         const activeHeader=document.querySelector('.accordion-header[data-target="active"]'), completedHeader=document.querySelector('.accordion-header[data-target="completed"]'), activeContent=document.getElementById('active-content'), completedContent=document.getElementById('completed-content'), iconActive=document.getElementById('icon-active'), iconCompleted=document.getElementById('icon-completed');
-        function toggleActive(){ activeOpen=!activeOpen; if(activeOpen){ activeContent.classList.add('open'); iconActive.innerHTML='▼'; }else{ activeContent.classList.remove('open'); iconActive.innerHTML='▶'; } }
-        function toggleCompleted(){ completedOpen=!completedOpen; if(completedOpen){ completedContent.classList.add('open'); iconCompleted.innerHTML='▼'; }else{ completedContent.classList.remove('open'); iconCompleted.innerHTML='▶'; } }
+        function toggleActive(){ activeOpen=!activeOpen; if(activeOpen){ activeContent.classList.add('open'); iconActive.style.transform='rotate(0deg)'; }else{ activeContent.classList.remove('open'); iconActive.style.transform='rotate(-90deg)'; } }
+        function toggleCompleted(){ completedOpen=!completedOpen; if(completedOpen){ completedContent.classList.add('open'); iconCompleted.style.transform='rotate(0deg)'; }else{ completedContent.classList.remove('open'); iconCompleted.style.transform='rotate(-90deg)'; } }
         if(activeHeader) activeHeader.addEventListener('click',toggleActive); if(completedHeader) completedHeader.addEventListener('click',toggleCompleted);
         activeContent.classList.add('open'); completedContent.classList.add('open');
     }
@@ -1334,49 +1369,57 @@
 
     function bindEvents() {
         addBtn.addEventListener('click',addNewTask); newTaskInput.addEventListener('keypress',e=>{if(e.key==='Enter'){e.preventDefault(); addNewTask();}});
-        saveTemplateBtn.addEventListener('click',saveCurrentAsTemplate);
-        loadTemplateBtn.addEventListener('click',confirmLoadTemplate);
-        deleteTemplateBtn.addEventListener('click',confirmDeleteTemplate);
+        saveTemplateBtn.addEventListener('click',saveCurrentAsTemplate); loadTemplateBtn.addEventListener('click',confirmLoadTemplate); deleteTemplateBtn.addEventListener('click',confirmDeleteTemplate);
         exportDataBtn.addEventListener('click',exportJSON); importDataBtn.addEventListener('click',()=>importFileInput.click()); importFileInput.addEventListener('change',e=>{if(e.target.files[0]) importJSON(e.target.files[0]);});
-        clearAllBtn.addEventListener('click',confirmClearAll);
-        themeToggle.addEventListener('click',toggleTheme); searchInput.addEventListener('input',e=>{filterText=e.target.value; renderTasks();});
+        clearAllBtn.addEventListener('click',confirmClearAll); themeToggle.addEventListener('click',toggleTheme); 
+        searchInput.addEventListener('input',e=>{filterText=e.target.value; renderTasks();});
         exportCsvBtn.addEventListener('click',exportCSV); exportPdfBtn.addEventListener('click',exportPDF);
+        
+        // Yeni klavye kısayolları ve ESC tuşu ile modal/pencereleri kapatma entegrasyonu
         window.addEventListener('keydown',e=>{
+            // ESC tuşu ile tüm aktif modalları kapatma
+            if(e.key === 'Escape') {
+                hideModal();
+                hideEditModal();
+                helpModal.classList.remove('active');
+                socialModal.classList.remove('active');
+                bookmarkModal.classList.remove('active');
+            }
+
             if((e.ctrlKey || e.altKey) && e.key.toLowerCase() === 'n'){ e.preventDefault(); e.stopPropagation(); newTaskInput.focus(); }
             if(e.ctrlKey && e.code === 'KeyF'){ e.preventDefault(); searchInput.focus(); }
             if(e.ctrlKey && e.code === 'KeyS'){ e.preventDefault(); exportCSV(); }
             if(e.ctrlKey && e.code === 'KeyE'){ const activeItem=document.querySelector('.task-item .edit-task'); if(activeItem) activeItem.click(); }
+            
+            // Eklenen yeni kısayollar (Ctrl+D Tema Değiştir, Ctrl+P PDF İndir)
+            if(e.ctrlKey && e.code === 'KeyD'){ e.preventDefault(); toggleTheme(); }
+            if(e.ctrlKey && e.code === 'KeyP'){ e.preventDefault(); exportPDF(); }
         });
+        
         confirmCancelBtn.addEventListener('click',hideModal);
-        confirmOkBtn.addEventListener('click',()=>{
-            if(pendingConfirmAction) {
-                if(pendingConfirmSkipKey && confirmDontAsk.checked) setSkipFlag(pendingConfirmSkipKey, true);
-                pendingConfirmAction(); pendingConfirmAction = null;
-            }
-            hideModal();
-        });
+        confirmOkBtn.addEventListener('click',()=>{ if(pendingConfirmAction) { if(pendingConfirmSkipKey && confirmDontAsk.checked) setSkipFlag(pendingConfirmSkipKey, true); pendingConfirmAction(); pendingConfirmAction = null; } hideModal(); });
         modal.addEventListener('click',(e)=>{if(e.target===modal) hideModal();});
-        editCancelBtn.addEventListener('click', hideEditModal);
-        editSaveBtn.addEventListener('click', saveEdit);
+        
+        editCancelBtn.addEventListener('click', hideEditModal); editSaveBtn.addEventListener('click', saveEdit);
         editTaskInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') saveEdit(); });
         editModal.addEventListener('click', (e) => { if(e.target === editModal) hideEditModal(); });
 
-        // Yeni Butonların Event Listener'ları
         helpBtn.addEventListener('click', () => helpModal.classList.add('active'));
         socialBtn.addEventListener('click', () => socialModal.classList.add('active'));
-        closeHelpBtn.addEventListener('click', () => helpModal.classList.remove('active'));
-        closeSocialBtn.addEventListener('click', () => socialModal.classList.remove('active'));
         
-        // Yer İmi Butonu
         bookmarkBtn.addEventListener('click', () => {
             const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-            const shortcut = isMac ? 'Cmd+D' : 'Ctrl+D';
-            alert(`Sayfayı yer imlerine (favorilere) eklemek için klavyenizden ${shortcut} tuşlarına basabilirsiniz.`);
+            bookmarkShortcutText.textContent = isMac ? 'Cmd + D' : 'Ctrl + D';
+            bookmarkModal.classList.add('active');
         });
+
+        closeHelpBtn.addEventListener('click', () => helpModal.classList.remove('active'));
+        closeSocialBtn.addEventListener('click', () => socialModal.classList.remove('active'));
+        closeBookmarkBtn.addEventListener('click', () => bookmarkModal.classList.remove('active'));
         
-        // Modalların Dışına Tıklayınca Kapanması
         helpModal.addEventListener('click', (e) => { if(e.target === helpModal) helpModal.classList.remove('active'); });
         socialModal.addEventListener('click', (e) => { if(e.target === socialModal) socialModal.classList.remove('active'); });
+        bookmarkModal.addEventListener('click', (e) => { if(e.target === bookmarkModal) bookmarkModal.classList.remove('active'); });
     }
 
     loadInitialData(); bindEvents(); initTheme(); setupAccordion();
