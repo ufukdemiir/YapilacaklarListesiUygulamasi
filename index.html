@@ -29,13 +29,13 @@
 
         /* CSS Değişkenleri - Sıcak Açık Tema */
         :root {
-            --bg-body: #faf6f3; /* Sıcak krem beyazı */
+            --bg-body: #faf6f3;
             --bg-card: #ffffff;
-            --text-primary: #2d241f; /* Koyu kahve/gri */
+            --text-primary: #2d241f;
             --text-secondary: #6b5c54;
             --border-light: #f0e6dd;
             --border-hover: #dccac0;
-            --accent: #ea580c; /* Zarif, üretken yanık turuncu */
+            --accent: #ea580c;
             --accent-hover: #c2410c;
             --progress-bg: #f4ede6;
             --task-hover: #fffdfc;
@@ -62,15 +62,15 @@
             --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
         }
 
-        /* Koyu Tema - Antrasit ve Turuncu Uyumu */
+        /* Koyu Tema */
         body.dark {
-            --bg-body: #1c1917; /* Stone 900 */
-            --bg-card: #292524; /* Stone 800 */
-            --text-primary: #f5f5f4; /* Stone 100 */
-            --text-secondary: #a8a29e; /* Stone 400 */
-            --border-light: #44403c; /* Stone 700 */
+            --bg-body: #1c1917;
+            --bg-card: #292524;
+            --text-primary: #f5f5f4;
+            --text-secondary: #a8a29e;
+            --border-light: #44403c;
             --border-hover: #57534e;
-            --accent: #f97316; /* Koyu modda daha parlak turuncu */
+            --accent: #f97316;
             --accent-hover: #fdba74;
             --progress-bg: #1c1917;
             --task-hover: #312e2b;
@@ -97,27 +97,12 @@
             --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f97316'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
         }
 
-        /* Özel Kaydırma Çubuğu (Scrollbar) */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-body);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-hover);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-secondary);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
 
-        /* Flaş patlamasını engelleyen ana geçiş ayarları */
-        html {
-            background-color: var(--bg-body);
-            transition: background-color 0.4s ease;
-        }
+        html { background-color: var(--bg-body); transition: background-color 0.4s ease; }
 
         body {
             background-color: var(--bg-body);
@@ -130,13 +115,8 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Genel odak (focus) iyileştirmesi */
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-        /* Animasyonların eklendiği akıcı kapsayıcılar */
         .container, .task-item, input, select, button, .template-card, .info-note, .edit-box, .confirm-box, .info-box {
             transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
         }
@@ -150,16 +130,16 @@
             overflow: hidden;
         }
 
-        .inner {
-            padding: 2.5rem 2rem;
-        }
+        .inner { padding: 2.5rem 2rem; }
         
+        /* Mobil Genel Yapı */
         @media (max-width: 640px) {
-            body { padding: 1.5rem 1rem; }
-            .inner { padding: 1.8rem 1.2rem; }
+            body { padding: 1rem 0.5rem; }
+            .container { border-radius: 1.5rem; }
+            .inner { padding: 1.5rem 1rem; }
         }
 
-        /* Başlık ve kontroller */
+        /* Başlık ve Kontroller */
         .title-bar {
             display: flex;
             justify-content: space-between;
@@ -180,36 +160,19 @@
             gap: 10px;
         }
         
-        .title i {
-            font-size: 1.5rem;
-            color: var(--accent);
-            font-style: normal;
-        }
+        .title i { font-size: 1.5rem; color: var(--accent); font-style: normal; }
         
-        .right-controls {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        .right-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
         
         .save-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            background: var(--badge-bg);
-            padding: 0.45rem 1rem;
-            border-radius: 40px;
-            color: var(--badge-text);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600;
+            background: var(--badge-bg); padding: 0.45rem 1rem; border-radius: 40px;
+            color: var(--badge-text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .save-animate {
             animation: badgePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: #10b981 !important;
-            color: white !important;
+            background: #10b981 !important; color: white !important;
         }
         
         @keyframes badgePop {
@@ -219,711 +182,236 @@
         }
         
         .theme-toggle {
-            background: var(--badge-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 3rem;
-            padding: 0.45rem 1rem;
-            cursor: pointer;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            background: var(--badge-bg); border: 1px solid var(--border-light); border-radius: 3rem;
+            padding: 0.45rem 1rem; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem; font-weight: 600; color: var(--text-secondary);
+            display: flex; align-items: center; gap: 6px; min-height: 36px;
         }
         
-        .theme-toggle:hover {
-            background: var(--border-light);
-            color: var(--text-primary);
-            transform: translateY(-1px);
-        }
-        .theme-toggle:active {
-            transform: translateY(0);
-        }
+        .theme-toggle:hover { background: var(--border-light); color: var(--text-primary); transform: translateY(-1px); }
+        .theme-toggle:active { transform: translateY(0); }
 
-        /* İlerleme alanı */
+        /* İlerleme Alanı */
         .progress-area {
-            margin-bottom: 2rem;
-            background: var(--completed-bg);
-            padding: 1.2rem 1.5rem;
-            border-radius: 1.5rem;
-            border: 1px solid var(--border-light);
+            margin-bottom: 2rem; background: var(--completed-bg); padding: 1.2rem 1.5rem;
+            border-radius: 1.5rem; border: 1px solid var(--border-light);
         }
         
-        .stats-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            margin-bottom: 0.8rem;
-        }
-        
-        .progress-bar-bg {
-            background-color: var(--progress-bg);
-            border-radius: 100px;
-            height: 8px;
-            overflow: hidden;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
-        }
-        
-        .progress-fill {
-            width: 0%;
-            height: 100%;
-            border-radius: 100px;
-            background-color: var(--accent);
-            transition: width 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), background-color 0.4s ease;
-        }
+        .stats-row { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.8rem; }
+        .progress-bar-bg { background-color: var(--progress-bg); border-radius: 100px; height: 8px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.03); }
+        .progress-fill { width: 0%; height: 100%; border-radius: 100px; background-color: var(--accent); transition: width 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), background-color 0.4s ease; }
         
         .motivation-text {
-            font-family: 'Lora', serif;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-top: 0.8rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            min-height: 2.2rem;
-            font-weight: 500;
+            font-family: 'Lora', serif; font-style: italic; font-size: 0.9rem; margin-top: 0.8rem;
+            color: var(--text-secondary); display: flex; align-items: center; gap: 6px; min-height: 2.2rem; font-weight: 500;
         }
         
-        .clear-all-btn {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        .clear-all-btn { margin-top: 1rem; display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
         
         .btn-clear, .btn-export {
-            background: var(--clear-btn-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 2rem;
-            padding: 0.45rem 1rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--clear-btn-color);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            background: var(--clear-btn-bg); border: 1px solid var(--border-light); border-radius: 2rem;
+            padding: 0.45rem 1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem;
+            font-weight: 700; color: var(--clear-btn-color); cursor: pointer; display: inline-flex;
+            align-items: center; gap: 6px; min-height: 36px; justify-content: center;
         }
         
-        .btn-clear:hover {
-            background: var(--clear-btn-hover);
-            color: var(--clear-btn-hover-color);
-            border-color: var(--clear-btn-hover-color);
-            transform: translateY(-1px);
-        }
-        
-        .btn-export:hover {
-            background: var(--border-hover);
-            color: var(--accent);
-            transform: translateY(-1px);
-        }
+        .btn-clear:hover { background: var(--clear-btn-hover); color: var(--clear-btn-hover-color); border-color: var(--clear-btn-hover-color); transform: translateY(-1px); }
+        .btn-export:hover { background: var(--border-hover); color: var(--accent); transform: translateY(-1px); }
 
         /* Arama ve Ekleme Kutu */
         .search-box { margin-bottom: 1.2rem; }
         
         .search-box input, .add-task-form input {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            border-radius: 2rem;
-            border: 1px solid var(--border-light);
-            background: var(--bg-card);
-            color: var(--text-primary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            outline: none;
-            box-shadow: var(--shadow-sm);
+            font-family: 'Plus Jakarta Sans', sans-serif; width: 100%; padding: 0.9rem 1.2rem;
+            border-radius: 2rem; border: 1px solid var(--border-light); background: var(--bg-card);
+            color: var(--text-primary); font-size: 0.95rem; font-weight: 500; outline: none;
+            box-shadow: var(--shadow-sm); min-height: 48px;
         }
         
-        .search-box input::placeholder, .add-task-form input::placeholder {
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
+        .search-box input:focus, .add-task-form input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15); }
         
-        .search-box input:focus, .add-task-form input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
-        }
-        
-        .add-task-form {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 2.5rem;
-        }
-        
-        .add-task-form input { flex: 1; }
+        .add-task-form { display: flex; gap: 12px; margin-bottom: 2.5rem; flex-wrap: wrap; }
+        .add-task-form input { flex: 1; min-width: 200px; }
         
         .add-task-form button {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--accent);
-            border: none;
-            color: white;
-            padding: 0 1.5rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-sm);
-            letter-spacing: 0.3px;
+            font-family: 'Plus Jakarta Sans', sans-serif; background: var(--accent); border: none;
+            color: white; padding: 0 1.5rem; border-radius: 2rem; font-weight: 700; cursor: pointer;
+            font-size: 0.9rem; box-shadow: var(--shadow-sm); letter-spacing: 0.3px; min-height: 48px;
         }
         
-        .add-task-form button:hover {
-            background: var(--accent-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 12px -2px rgba(234, 88, 12, 0.25);
-        }
-        
-        .add-task-form button:active { transform: translateY(0); }
+        .add-task-form button:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 6px 12px -2px rgba(234, 88, 12, 0.25); }
 
         /* Accordion ve Görev Listesi */
-        .accordion-section {
-            margin: 1.5rem 0 1rem;
-            border-bottom: 1px solid var(--border-light);
-        }
+        .accordion-section { margin: 1.5rem 0 1rem; border-bottom: 1px solid var(--border-light); }
+        .accordion-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 0.8rem 0; user-select: none; }
+        .section-title { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+        .accordion-icon { font-size: 0.9rem; color: var(--text-secondary); transition: transform 0.3s ease; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content.open { max-height: 1000px; transition: max-height 0.5s ease-in; }
         
-        .accordion-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 0.8rem 0;
-            user-select: none;
-        }
-        
-        .section-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .accordion-icon {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            transition: transform 0.3s ease;
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .accordion-content.open {
-            max-height: 1000px;
-            transition: max-height 0.5s ease-in;
-        }
-        
-        .task-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin: 1rem 0 1.5rem;
-            min-height: 10px;
-        }
+        .task-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1rem 0 1.5rem; min-height: 10px; }
         
         .task-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            padding: 0.8rem 1.2rem;
-            border-radius: 1.2rem;
-            cursor: grab;
-            box-shadow: var(--shadow-sm);
-            touch-action: pan-y; /* Mobil kaydırma ve dokunmatik iyileştirmesi */
+            display: flex; align-items: center; justify-content: space-between; background: var(--bg-card);
+            border: 1px solid var(--border-light); padding: 0.8rem 1.2rem; border-radius: 1.2rem;
+            cursor: grab; box-shadow: var(--shadow-sm); touch-action: pan-y; gap: 10px; min-height: 54px;
         }
         
         .task-item:active { cursor: grabbing; }
+        .task-item:hover { border-color: var(--border-hover); background: var(--task-hover); transform: translateY(-1px); }
+        .sortable-ghost { opacity: 0.4; background: var(--border-light); }
+        .sortable-drag { box-shadow: 0 15px 30px -5px rgba(0,0,0,0.15) !important; cursor: grabbing !important; transform: scale(1.02); }
         
-        .task-item:hover {
-            border-color: var(--border-hover);
-            background: var(--task-hover);
-            transform: translateY(-1px);
-        }
+        .task-left { display: flex; align-items: center; gap: 14px; flex: 1; }
         
-        .sortable-ghost {
-            opacity: 0.4;
-            background: var(--border-light);
-        }
-        .sortable-drag {
-            box-shadow: 0 15px 30px -5px rgba(0,0,0,0.15) !important;
-            cursor: grabbing !important;
-            transform: scale(1.02);
-        }
-        
-        .task-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex: 1;
-        }
-        
-        .task-check {
-            width: 1.3rem;
-            height: 1.3rem;
-            accent-color: var(--accent);
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+        .task-check { width: 1.4rem; height: 1.4rem; accent-color: var(--accent); cursor: pointer; transition: transform 0.2s; flex-shrink: 0; }
         .task-check:hover { transform: scale(1.1); }
         
-        .task-text {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            word-break: break-word;
-            flex: 1;
-            transition: color 0.3s;
-        }
+        .task-text { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); word-break: break-word; flex: 1; transition: color 0.3s; }
+        .task-text.completed { text-decoration: line-through; color: var(--completed-text); font-style: italic; }
         
-        .task-text.completed {
-            text-decoration: line-through;
-            color: var(--completed-text);
-            font-style: italic;
-        }
-        
-        .task-actions {
-            display: flex;
-            gap: 8px;
-        }
+        .task-actions { display: flex; gap: 4px; }
         
         .edit-task, .delete-task {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            color: var(--delete-color);
-            padding: 6px 8px;
-            border-radius: 40px;
+            background: transparent; border: none; cursor: pointer; font-size: 1rem;
+            color: var(--delete-color); border-radius: 50%; width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
         }
-        
         .edit-task:hover { color: var(--accent); background: var(--icon-wrap-bg); }
         .delete-task:hover { color: var(--delete-hover); background: var(--delete-hover-bg); }
 
-        /* Şablon ve Yedekleme */
-        .template-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--template-border);
+        /* Revize Edilmiş Şablon ve Yedekleme (Mobil ve Yapı İyileştirmesi) */
+        .template-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--template-border); }
+        .template-header { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        
+        .template-card { background: var(--completed-bg); border-radius: 1.2rem; padding: 1.5rem; border: 1px solid var(--border-light); }
+        
+        /* Şablon Blokları (Yükle/Sil Alt Başlık İçin) */
+        .template-block { margin-bottom: 1.2rem; }
+        .template-block:last-of-type { margin-bottom: 0; }
+        
+        .template-sub-header {
+            font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);
+            margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px;
         }
         
-        .template-header {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--text-secondary);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .template-card {
-            background: var(--completed-bg);
-            border-radius: 1.2rem;
-            padding: 1.2rem;
-            border: 1px solid var(--border-light);
-        }
-        
-        .template-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-        
-        .template-row:last-child { margin-bottom: 0; }
-        
-        .template-label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            min-width: 65px;
-        }
-        
-        .template-input-group {
-            flex: 2;
-            display: flex;
-            flex-wrap: wrap; /* Elementlerin dar ekranda alt satıra geçmesini sağlar */
-            gap: 8px;
-            min-width: 100%; /* Sıkışmayı ve taşmayı engeller */
-        }
+        .template-divider { height: 1px; background: var(--border-light); margin: 1.2rem 0; }
+
+        .template-input-group { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
         
         .template-input-group input {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            flex: 1 1 140px; /* Küçüldüğünde esnemesine olanak tanır */
-            padding: 0.6rem 1rem;
-            border-radius: 2rem;
-            border: 1px solid var(--border-light);
-            background: var(--bg-card);
-            color: var(--text-primary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            outline: none;
+            font-family: 'Plus Jakarta Sans', sans-serif; flex: 1 1 140px; padding: 0.6rem 1rem;
+            border-radius: 2rem; border: 1px solid var(--border-light); background: var(--bg-card);
+            color: var(--text-primary); font-size: 0.85rem; font-weight: 500; outline: none; min-height: 44px;
         }
-
-        .template-input-group .template-btn {
-            flex: 1 1 auto; /* Butonun taşmasını engeller ve hizayı korur */
-        }
-
-        /* Özel Revize Edilmiş Select Menüsü */
+        
         .template-select {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            flex: 2;
-            padding: 0.6rem 2.5rem 0.6rem 1.1rem;
-            border-radius: 2rem;
-            border: 1px solid var(--border-light);
-            background-color: var(--bg-card);
-            color: var(--text-primary);
-            font-size: 0.85rem;
-            font-weight: 500;
-            outline: none;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: var(--select-arrow);
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
+            font-family: 'Plus Jakarta Sans', sans-serif; flex: 2 1 200px; padding: 0.6rem 2.5rem 0.6rem 1.1rem;
+            border-radius: 2rem; border: 1px solid var(--border-light); background-color: var(--bg-card);
+            color: var(--text-primary); font-size: 0.85rem; font-weight: 500; outline: none;
+            appearance: none; -webkit-appearance: none; -moz-appearance: none;
+            background-image: var(--select-arrow); background-repeat: no-repeat;
+            background-position: right 1rem center; background-size: 1.1rem; cursor: pointer;
+            box-shadow: var(--shadow-sm); min-height: 44px;
         }
         
-        .template-input-group input:focus, .template-select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
-        }
-        
-        .template-btn-group {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+        .template-input-group input:focus, .template-select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15); }
         
         .template-btn {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--badge-bg);
-            border: 1px solid var(--border-light);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
+            font-family: 'Plus Jakarta Sans', sans-serif; background: var(--badge-bg); border: 1px solid var(--border-light);
+            padding: 0.5rem 1.2rem; border-radius: 2rem; font-weight: 700; cursor: pointer; font-size: 0.85rem;
+            color: var(--text-secondary); display: flex; align-items: center; justify-content: center; gap: 6px;
+            flex: 1 1 auto; min-height: 44px;
         }
         
         .template-btn:hover { background: var(--border-hover); color: var(--text-primary); }
         
-        .template-btn.full-width {
-            flex: 1;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
+        .template-btn.full-width { width: 100%; flex: 1 1 100%; }
         
-        .template-delete-btn {
-            background: rgba(239, 68, 68, 0.05);
-            color: #ef4444;
-            border-color: #ef4444;
-        }
-        
+        .template-delete-btn { background: rgba(239, 68, 68, 0.05); color: #ef4444; border-color: #ef4444; }
         .template-delete-btn:hover { background: #ef4444; color: white; border-color: #ef4444; }
         
-        .small-note {
-            font-family: 'Lora', serif;
-            font-style: italic;
-            font-size: 0.8rem;
-            color: var(--completed-text);
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: 500;
-        }
+        .small-note { font-family: 'Lora', serif; font-style: italic; font-size: 0.8rem; color: var(--completed-text); margin-top: 1.2rem; text-align: center; font-weight: 500; }
 
-        /* Bilgi Notları Bölümü - Hizalaması Mükemmelleştirildi */
-        .info-note {
-            background: var(--info-bg);
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: center; /* Tam dikey merkezleme sağlandı */
-            gap: 12px;
-        }
-        
-        .info-item .icon-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            background: var(--icon-wrap-bg);
-            border-radius: 50%;
-            color: var(--accent);
-            flex-shrink: 0;
-            font-size: 0.9rem;
-        }
-        
-        .info-item p {
-            margin: 0;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: var(--info-text);
-        }
+        /* Bilgi Notları */
+        .info-note { background: var(--info-bg); border-radius: 1.2rem; padding: 1.5rem; margin-top: 2rem; display: flex; flex-direction: column; gap: 14px; border-left: 4px solid var(--accent); }
+        .info-item { display: flex; align-items: center; gap: 12px; }
+        .info-item .icon-wrap { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: var(--icon-wrap-bg); border-radius: 50%; color: var(--accent); flex-shrink: 0; font-size: 0.9rem; }
+        .info-item p { margin: 0; font-size: 0.85rem; line-height: 1.5; color: var(--info-text); }
 
-        /* Modallar (Yumuşak Geçiş ve Sıçrama Efektli) */
+        /* Modallar */
         .edit-modal, .custom-confirm, .info-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--modal-overlay);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.3s, opacity 0.3s;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-overlay);
+            backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center;
+            z-index: 2000; visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s; padding: 1rem;
         }
         
-        .edit-modal.active, .custom-confirm.active, .info-modal.active {
-            visibility: visible;
-            opacity: 1;
-        }
+        .edit-modal.active, .custom-confirm.active, .info-modal.active { visibility: visible; opacity: 1; }
         
         .edit-box, .confirm-box, .info-box {
-            background: var(--modal-bg);
-            border-radius: 1.5rem;
-            max-width: 360px;
-            width: 90%;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-light);
-            transform: scale(0.95) translateY(10px);
-            opacity: 0;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            background: var(--modal-bg); border-radius: 1.5rem; width: 100%; box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light); transform: scale(0.95) translateY(10px); opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease; max-height: 90vh; overflow-y: auto;
         }
+        .edit-box { max-width: 400px; }
+        .confirm-box { max-width: 360px; }
         
-        .active .edit-box, .active .confirm-box, .active .info-box {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-        }
+        .active .edit-box, .active .confirm-box, .active .info-box { transform: scale(1) translateY(0); opacity: 1; }
         
         .edit-box, .confirm-box { padding: 2rem; }
         
         .edit-box input {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            border-radius: 2rem;
-            border: 1px solid var(--border-light);
-            background: var(--bg-card);
-            color: var(--text-primary);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            outline: none;
-        }
-        .edit-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15); }
-        
-        .edit-buttons, .confirm-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: flex-end;
+            font-family: 'Plus Jakarta Sans', sans-serif; width: 100%; padding: 0.9rem 1.2rem;
+            border-radius: 2rem; border: 1px solid var(--border-light); background: var(--bg-card);
+            color: var(--text-primary); font-size: 0.95rem; margin-bottom: 1.5rem; outline: none; min-height: 48px;
         }
         
-        .edit-buttons button, .confirm-buttons button {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            padding: 0.6rem 1.5rem;
-            border-radius: 2rem;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
+        .edit-buttons, .confirm-buttons { display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; }
+        .edit-buttons button, .confirm-buttons button { font-family: 'Plus Jakarta Sans', sans-serif; padding: 0.6rem 1.5rem; border-radius: 2rem; border: none; cursor: pointer; font-size: 0.9rem; font-weight: 700; min-height: 44px; flex: 1; }
         
-        .edit-cancel, .confirm-cancel {
-            background: var(--badge-bg);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-light);
-        }
-        .edit-cancel:hover, .confirm-cancel:hover { background: var(--border-hover); }
+        .edit-cancel, .confirm-cancel { background: var(--badge-bg); color: var(--text-secondary); border: 1px solid var(--border-light); }
+        .edit-save, .confirm-ok { background: var(--accent); color: white; }
         
-        .edit-save, .confirm-ok {
-            background: var(--accent);
-            color: white;
-        }
-        .edit-save:hover, .confirm-ok:hover { background: var(--accent-hover); }
-        
-        .confirm-box p {
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-primary);
-        }
-        
-        .confirm-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            cursor: pointer;
-        }
-        .confirm-checkbox input { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; }
+        .confirm-box p { margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); }
+        .confirm-checkbox { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); cursor: pointer; }
+        .confirm-checkbox input { accent-color: var(--accent); width: 18px; height: 18px; cursor: pointer; }
 
-        /* Bilgi, Sosyal Medya & Yer İmi Kutuları */
-        .info-box { 
-            padding: 2.2rem 2rem 2rem; 
-            max-width: 420px; 
-            position: relative; 
-        }
-        .info-box h3 {
-            font-family: 'Lora', serif;
-            font-style: italic;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .help-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-        .help-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-        .help-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: var(--icon-wrap-bg);
-            color: var(--accent);
-            border-radius: 10px;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-        .help-text {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .help-text strong {
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-        .help-text p {
-            font-size: 0.85rem;
-            margin: 0;
-            line-height: 1.5;
-            color: var(--text-secondary);
-        }
+        .info-box { padding: 2.2rem 2rem 2rem; max-width: 420px; position: relative; }
+        .info-box h3 { font-family: 'Lora', serif; font-style: italic; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+        .help-grid { display: flex; flex-direction: column; gap: 1.2rem; }
+        .help-item { display: flex; align-items: flex-start; gap: 14px; }
+        .help-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--icon-wrap-bg); color: var(--accent); border-radius: 10px; font-size: 1rem; flex-shrink: 0; }
+        .help-text { display: flex; flex-direction: column; gap: 4px; }
+        .help-text strong { font-size: 0.95rem; color: var(--text-primary); font-weight: 700; }
+        .help-text p { font-size: 0.85rem; margin: 0; line-height: 1.5; color: var(--text-secondary); }
         
         .social-links { display: flex; flex-direction: column; gap: 12px; }
+        .social-link-btn { display: flex; align-items: center; gap: 14px; background: var(--bg-body); padding: 1rem 1.2rem; border-radius: 1rem; text-decoration: none; color: var(--text-primary); font-weight: 700; font-size: 0.95rem; border: 1px solid var(--border-light); transition: all 0.3s ease; }
+        .social-link-btn:hover { border-color: var(--accent); background: var(--icon-wrap-bg); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .social-link-btn i { font-size: 1.3rem; color: var(--accent); width: 24px; text-align: center; }
         
-        .social-link-btn {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: var(--bg-body);
-            padding: 1rem 1.2rem;
-            border-radius: 1rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 700;
-            font-size: 0.95rem;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-        
-        .social-link-btn:hover {
-            border-color: var(--accent);
-            background: var(--icon-wrap-bg);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .social-link-btn i {
-            font-size: 1.3rem;
-            color: var(--accent);
-            width: 24px;
-            text-align: center;
-        }
-        
-        .close-modal-btn {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            background: var(--badge-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .close-modal-btn:hover {
-            color: var(--delete-hover);
-            background: var(--delete-hover-bg);
-            border-color: var(--delete-hover-bg);
-            transform: rotate(90deg);
-        }
+        .close-modal-btn { position: absolute; top: 1.2rem; right: 1.2rem; background: var(--badge-bg); border: 1px solid var(--border-light); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; }
+        .close-modal-btn:hover { color: var(--delete-hover); background: var(--delete-hover-bg); border-color: var(--delete-hover-bg); transform: rotate(90deg); }
 
-        .bookmark-badge {
-            background: var(--bg-body);
-            padding: 1.2rem;
-            border-radius: 1.2rem;
-            border: 1px dashed var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 1.2rem 0;
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1.1rem;
+        .bookmark-badge { background: var(--bg-body); padding: 1.2rem; border-radius: 1.2rem; border: 1px dashed var(--accent); display: flex; align-items: center; justify-content: center; gap: 10px; margin: 1.2rem 0; color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+
+        /* Kapsamlı Mobil Medya Sorguları */
+        @media (max-width: 640px) {
+            .title-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .right-controls { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: 8px; }
+            .theme-toggle, .save-indicator { justify-content: center; text-align: center; width: 100%; flex: 1; }
+            .save-indicator { grid-column: span 2; }
+            
+            .stats-row { flex-direction: column; gap: 4px; align-items: center; }
+            .clear-all-btn button { flex: 1 1 100%; }
+            
+            .add-task-form { flex-direction: column; }
+            .add-task-form input, .add-task-form button { width: 100%; }
+            
+            .template-input-group { flex-direction: column; }
+            .template-input-group input, .template-input-group select, .template-input-group button { width: 100%; flex: 1 1 100%; }
+            
+            .edit-buttons button, .confirm-buttons button { width: 100%; }
         }
     </style>
 </head>
@@ -935,9 +423,9 @@
         <div class="title-bar">
             <span class="title"><i class="fas fa-clipboard-check"></i> Yapılacaklar Listesi</span>
             <div class="right-controls">
-                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?" style="padding: 0.45rem 0.8rem;"><i class="fas fa-circle-question"></i></button>
-                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya" style="padding: 0.45rem 0.8rem;"><i class="fas fa-arrow-up-right-from-square"></i></button>
-                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle" style="padding: 0.45rem 0.8rem;"><i class="fas fa-bookmark"></i></button>
+                <button class="theme-toggle" id="helpBtn" title="Nasıl Kullanılır?"><i class="fas fa-circle-question"></i></button>
+                <button class="theme-toggle" id="socialBtn" title="Uygulamalar & Sosyal Medya"><i class="fas fa-arrow-up-right-from-square"></i></button>
+                <button class="theme-toggle" id="bookmarkBtn" title="Yer İmlerine Ekle"><i class="fas fa-bookmark"></i></button>
                 <span class="save-indicator" id="saveIndicator"><i class="fas fa-database"></i> <span>Kaydedildi</span></span>
                 <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> Gece</button>
             </div>
@@ -972,18 +460,46 @@
             <div class="accordion-content" id="completed-content"><div class="task-list" id="completedTasksList"></div></div>
         </div>
 
+        <!-- YENİLENMİŞ ŞABLON BÖLÜMÜ -->
         <div class="template-section">
             <div class="template-header"><i class="fas fa-copy"></i> Tekrar Eden Görev Şablonları</div>
             <div class="template-card">
-                <div class="template-row"><span class="template-label">Kaydet:</span><div class="template-input-group"><input id="templateNameInput" placeholder="Şablon adı" type="text" /><button class="template-btn" id="saveTemplateBtn"><i class="fas fa-save"></i> Kaydet</button></div></div>
-                <div class="template-row"><span class="template-label">Yükle/Sil:</span><div style="display: flex; flex-wrap: wrap; flex: 2; gap: 8px;"><select class="template-select" id="templateSelect"><option value="">— şablon seç —</option></select><button class="template-btn" id="loadTemplateBtn"><i class="fas fa-upload"></i> Yükle</button><button class="template-btn template-delete-btn" id="deleteTemplateBtn"><i class="fas fa-trash-alt"></i> Sil</button></div></div>
+                
+                <!-- Şablon Kaydet Alt Başlığı -->
+                <div class="template-block">
+                    <div class="template-sub-header"><i class="fas fa-plus-circle"></i> Yeni Şablon Kaydet</div>
+                    <div class="template-input-group">
+                        <input id="templateNameInput" placeholder="Yeni şablon adı girin" type="text" />
+                        <button class="template-btn" id="saveTemplateBtn"><i class="fas fa-save"></i> Kaydet</button>
+                    </div>
+                </div>
+                
+                <div class="template-divider"></div>
+                
+                <!-- Şablon Yükle / Sil Alt Başlığı -->
+                <div class="template-block">
+                    <div class="template-sub-header"><i class="fas fa-tasks"></i> Şablon Yükle veya Sil</div>
+                    <div class="template-input-group">
+                        <select class="template-select" id="templateSelect"><option value="">— şablon seç —</option></select>
+                        <button class="template-btn" id="loadTemplateBtn"><i class="fas fa-upload"></i> Yükle</button>
+                        <button class="template-btn template-delete-btn" id="deleteTemplateBtn"><i class="fas fa-trash-alt"></i> Sil</button>
+                    </div>
+                </div>
+
                 <div class="small-note">⚡ Mevcut görevlerinizi şablon olarak kaydedin. Yüklemek mevcutları siler.</div>
             </div>
         </div>
         
         <div class="template-section">
             <div class="template-header"><i class="fas fa-archive"></i> Veri Yedekleme</div>
-            <div class="template-card"><div class="template-row"><div class="template-btn-group" style="width: 100%;"><button class="template-btn full-width" id="exportDataBtn"><i class="fas fa-download"></i> JSON Yedek İndir</button><button class="template-btn full-width" id="importDataBtn"><i class="fas fa-upload"></i> JSON Yedek Yükle</button><input accept=".json" id="importFileInput" style="display: none;" type="file" /></div></div><div class="small-note">Tüm görev ve şablonlarınızı dışa/içe aktarın.</div></div>
+            <div class="template-card">
+                <div class="template-input-group">
+                    <button class="template-btn full-width" id="exportDataBtn"><i class="fas fa-download"></i> JSON Yedek İndir</button>
+                    <button class="template-btn full-width" id="importDataBtn"><i class="fas fa-upload"></i> JSON Yedek Yükle</button>
+                    <input accept=".json" id="importFileInput" style="display: none;" type="file" />
+                </div>
+                <div class="small-note">Tüm görev ve şablonlarınızı dışa/içe aktarın.</div>
+            </div>
         </div>
         
         <div class="info-note">
@@ -1110,11 +626,9 @@
     let pendingConfirmAction = null;
     let pendingConfirmSkipKey = null;
 
-    // Motivasyon Mesajı Durumu (Yazı yazarken rastgele değişmesini önlemek için)
     let currentMotivationStateKey = "";
     let currentMotivationText = "";
 
-    // DOM
     const activeContainer = document.getElementById('activeTasksList');
     const completedContainer = document.getElementById('completedTasksList');
     const newTaskInput = document.getElementById('newTaskInput');
@@ -1158,11 +672,9 @@
     const closeBookmarkBtn = document.getElementById('closeBookmarkBtn');
     const bookmarkShortcutText = document.getElementById('bookmarkShortcutText');
 
-    // Helper: Skip kontrolü
     function getSkipFlag(key) { return localStorage.getItem(`skip_${key}`) === 'true'; }
     function setSkipFlag(key, val) { if(val) localStorage.setItem(`skip_${key}`, 'true'); else localStorage.removeItem(`skip_${key}`); }
 
-    // Modallar
     function showConfirm(message, skipKey, onConfirm) {
         if (skipKey && getSkipFlag(skipKey)) { onConfirm(); return; }
         confirmMessage.innerText = message;
@@ -1189,7 +701,6 @@
         hideEditModal();
     }
 
-    // Renk, Animasyon, Kayıt
     function triggerSaveAnimation() { saveIndicator.classList.add('save-animate'); setTimeout(()=>saveIndicator.classList.remove('save-animate'),500); }
     function persistToLocal() { localStorage.setItem('yapilistem_tasks', JSON.stringify(tasks)); localStorage.setItem('yapilistem_templates', JSON.stringify(templates)); triggerSaveAnimation(); }
 
@@ -1229,7 +740,6 @@
         motivationMsgSpan.innerHTML = currentMotivationText;
     }
 
-    // Görev Render ve Mobil Uyumlu SortableJS Yapılandırması
     function renderTasks() {
         const filtered = tasks.filter(t => t.text.toLowerCase().includes(filterText.toLowerCase()));
         const activeTasks = filtered.filter(t => !t.completed);
@@ -1248,13 +758,12 @@
         if (sortableActive) sortableActive.destroy();
         if (sortableCompleted) sortableCompleted.destroy();
         
-        // Mobil uyumluluk, gecikme (delay) ve hassasiyet ayarları ile güçlendirilmiş SortableJS tanımları
         const sortableOptions = {
             animation: 200,
             ghostClass: 'sortable-ghost',
             dragClass: 'sortable-drag',
-            delay: 150, // Mobilde yanlışlıkla kaydırmaları önlemek için küçük gecikme
-            delayOnTouchOnly: true, // Sadece dokunmatik cihazlarda gecikme uygular
+            delay: 150, 
+            delayOnTouchOnly: true, 
             touchStartThreshold: 5,
             forceFallback: false
         };
@@ -1318,7 +827,6 @@
     function performClearAll() { if(tasks.length===0) return alert("Zaten boş"); tasks=[]; persistToLocal(); renderTasks(); alert("Tüm görevler temizlendi."); }
     function confirmClearAll() { showConfirm("Tüm görevler kalıcı olarak silinecek. Devam etmek istediğinize emin misiniz?", "clearAll", performClearAll); }
 
-    // Şablon İşlemleri
     function refreshTemplateSelect() { templateSelect.innerHTML='<option value="">— şablon seç —</option>'; const names=Object.keys(templates); if(names.length===0) templateSelect.innerHTML+='<option disabled>Kayıtlı şablon yok</option>'; else names.forEach(n=>{const opt=document.createElement('option'); opt.value=n; opt.textContent=n; templateSelect.appendChild(opt);}); }
     function saveCurrentAsTemplate() { const name=templateNameInput.value.trim(); if(!name) return alert("Şablon adı girin"); if(tasks.length===0) return alert("Kaydedilecek görev yok"); templates[name]=tasks.map(t=>t.text); persistToLocal(); refreshTemplateSelect(); templateNameInput.value=""; alert(`"${name}" kaydedildi`); }
     function performLoadTemplate() { const name = templateSelect.value.trim(); if (!name) return alert("Lütfen bir şablon seçin."); const tmpl = templates[name]; if (!tmpl || !tmpl.length) return alert("Seçili şablon boş veya bulunamadı."); tasks = tmpl.map((text, idx) => ({ id: Date.now() + idx + Math.random().toString(36).substring(2, 6), text: text, completed: false })); persistToLocal(); renderTasks(); alert(`"${name}" yüklendi, ${tasks.length} görev hazır`); }
@@ -1326,7 +834,6 @@
     function performDeleteTemplate() { const name = templateSelect.value; if(!name) return alert("Şablon seçin"); delete templates[name]; persistToLocal(); refreshTemplateSelect(); templateSelect.value=""; alert(`"${name}" silindi`); }
     function confirmDeleteTemplate() { const name = templateSelect.value; if(!name) return alert("Şablon seçin"); showConfirm(`"${name}" şablonunu kalıcı olarak silmek istediğinize emin misiniz?`, "deleteTemplate", performDeleteTemplate); }
 
-    // Veri İndirme/Yükleme
     function exportJSON() { const blob=new Blob([JSON.stringify({tasks,templates},null,2)],{type:"application/json"}); saveAs(blob,`yapilacaklar_yedek_${new Date().toISOString().split('T')[0]}.json`); alert("JSON yedeği indirildi"); }
     function importJSON(file) { const reader=new FileReader(); reader.onload=e=>{ try{ const data=JSON.parse(e.target.result); if(data.tasks!==undefined) tasks=data.tasks; if(data.templates!==undefined) templates=data.templates; persistToLocal(); renderTasks(); refreshTemplateSelect(); alert("Yedek başarıyla yüklendi"); } catch(err){ alert("Geçersiz dosya"); } importFileInput.value=""; }; reader.readAsText(file); }
     function exportCSV() { let csv="\"Görev\",\"Durum\"\n"; tasks.forEach(t=>{ csv+=`"${t.text.replace(/"/g,'""')}",${t.completed?"Tamamlandı":"Devam Ediyor"}\n`; }); const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}); saveAs(blob,`gorevler_${new Date().toISOString().split('T')[0]}.csv`); alert("CSV indirildi"); }
@@ -1345,7 +852,6 @@
         pdfMake.createPdf(docDefinition).download(`gorevler_${new Date().toISOString().split('T')[0]}.pdf`);
     }
 
-    // Tema Yönetimi
     function initTheme() { 
         const saved = localStorage.getItem('yapilistem_theme'); 
         if(saved === 'dark') { document.body.classList.add('dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } 
@@ -1356,7 +862,6 @@
         else { document.body.classList.add('dark'); localStorage.setItem('yapilistem_theme','dark'); themeToggle.innerHTML='<i class="fas fa-sun"></i> Gündüz'; } 
     }
 
-    // Accordion Yapısı
     function setupAccordion() {
         const activeHeader=document.querySelector('.accordion-header[data-target="active"]'), completedHeader=document.querySelector('.accordion-header[data-target="completed"]'), activeContent=document.getElementById('active-content'), completedContent=document.getElementById('completed-content'), iconActive=document.getElementById('icon-active'), iconCompleted=document.getElementById('icon-completed');
         function toggleActive(){ activeOpen=!activeOpen; if(activeOpen){ activeContent.classList.add('open'); iconActive.style.transform='rotate(0deg)'; }else{ activeContent.classList.remove('open'); iconActive.style.transform='rotate(-90deg)'; } }
@@ -1380,9 +885,7 @@
         searchInput.addEventListener('input',e=>{filterText=e.target.value; renderTasks();});
         exportCsvBtn.addEventListener('click',exportCSV); exportPdfBtn.addEventListener('click',exportPDF);
         
-        // Yeni klavye kısayolları ve ESC tuşu ile modal/pencereleri kapatma entegrasyonu
         window.addEventListener('keydown',e=>{
-            // ESC tuşu ile tüm aktif modalları kapatma
             if(e.key === 'Escape') {
                 hideModal();
                 hideEditModal();
@@ -1390,13 +893,10 @@
                 socialModal.classList.remove('active');
                 bookmarkModal.classList.remove('active');
             }
-
             if((e.ctrlKey || e.altKey) && e.key.toLowerCase() === 'n'){ e.preventDefault(); e.stopPropagation(); newTaskInput.focus(); }
             if(e.ctrlKey && e.code === 'KeyF'){ e.preventDefault(); searchInput.focus(); }
             if(e.ctrlKey && e.code === 'KeyS'){ e.preventDefault(); exportCSV(); }
             if(e.ctrlKey && e.code === 'KeyE'){ const activeItem=document.querySelector('.task-item .edit-task'); if(activeItem) activeItem.click(); }
-            
-            // Eklenen yeni kısayollar (Ctrl+D Tema Değiştir, Ctrl+P PDF İndir)
             if(e.ctrlKey && e.code === 'KeyD'){ e.preventDefault(); toggleTheme(); }
             if(e.ctrlKey && e.code === 'KeyP'){ e.preventDefault(); exportPDF(); }
         });
