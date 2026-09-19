@@ -30,7 +30,7 @@ Herhangi bir kayıt veya giriş gerektirmez; tüm veriler yalnızca kendi taray�
 Görev ekleme, düzenleme, silme, tamamlandı olarak işaretleme ve tek tıkla listeyi temizleme.
 
 **Organizasyon**  
-Devam eden / tamamlanan görevler için katlanabilir bölümler, sürükle-bırak ile sıralama, anlık arama, ilerleme çubuğu ve duruma göre değişen motivasyon mesajları.
+Devam eden / tamamlanan görevler için katlanabilir bölümler, mobil ve dokunmatik uyumlu sürükle-bırak ile sıralama, anlık arama, ilerleme çubuğu ve duruma göre değişen motivasyon mesajları.
 
 **Tema**  
 Tercihi hatırlayan gece / gündüz modu.
@@ -51,9 +51,12 @@ Sık tekrar eden görev setlerini isimlendirip kaydetme, tek tıkla yükleme ve 
 | Kısayol | İşlev |
 |---|---|
 | `Ctrl` / `Alt` + `N` | Yeni görev ekle |
-| `Ctrl` + `F` | Arama |
-| `Ctrl` + `S` | CSV olarak dışa aktar |
-| `Ctrl` + `E` | Görevi düzenle |
+| `Ctrl` + `F` | Arama yap |
+| `Ctrl` + `S` | CSV olarak indir |
+| `Ctrl` + `P` | PDF olarak indir |
+| `Ctrl` + `E` | Aktif görevi düzenle |
+| `Ctrl` + `D` | Temayı değiştir (Gece/Gündüz) |
+| `ESC` | Tüm açık pencereleri/modalları kapat |
 
 **Veri ve Gizlilik**  
 Tüm veriler yalnızca tarayıcınızın yerel deposunda (`localStorage`) tutulur; hiçbir sunucuya gönderilmez. Tarayıcı önbelleğini temizlemeden önce JSON yedeği almanız önerilir.
