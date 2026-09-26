@@ -6,7 +6,7 @@
 
 Sunucu gerektirmeyen, kayıt olmadan kullanılabilen, ücretsiz bir görev takip uygulaması.
 
-[Canlı Demo](https://ufukdemiir.github.io/YapilacaklarListesiUygulamasi/) · [Hata Bildir](../../issues) · [Özellik Öner](../../issues)
+[Canlı Demo](https://ufukdemiir.github.io/YapilacaklarListesi/) · [Hata Bildir](../../issues) · [Özellik Öner](../../issues)
 
 <sub>HTML · CSS · JavaScript &nbsp;&nbsp;|&nbsp;&nbsp; Sunucusuz &nbsp;&nbsp;|&nbsp;&nbsp; Ücretsiz Kullanım</sub>
 
@@ -75,7 +75,7 @@ Uygulama tek bir statik HTML dosyasından oluşur; kurulum veya derleme gerektir
 
 1. Bu repoyu klonlayın veya `index.html` dosyasını indirin
 2. Dosyayı doğrudan tarayıcınızda açın, ya da
-3. [Canlı demo](https://ufukdemiir.github.io/YapilacaklarListesiUygulamasi/) üzerinden GitHub Pages sürümünü kullanın
+3. [Canlı demo](https://ufukdemiir.github.io/YapilacaklarListesi/) üzerinden GitHub Pages sürümünü kullanın
 
 Sık kullanacaksanız sayfayı yer imlerine eklemeniz veya tarayıcınızda açılış sekmesi olarak ayarlamanız önerilir.
 
